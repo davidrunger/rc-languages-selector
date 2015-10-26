@@ -20,12 +20,12 @@ Navigate to any programming Task page at [rosettacode.org][rosettacode].
 page loads, the extension will inject a box that looks something like
 this at the top of the page:
 
-![Languages Selector Screenshot](images/screenshot-collapsed.png?raw=true)
+![Languages Selector Screenshot](images/screenshot-collapsed-small.png?raw=true)
 
 Click the "Select Languages" button to reveal a form that allows you to
 select which languages to display.
 
-![Languages Selector Screenshot](images/screenshot-form.png?raw=true)
+![Languages Selector Screenshot](images/screenshot-expanded-small.png?raw=true)
 
 You can select all/none of the languages using the "Toggle all" button.
 Because there are so many languages, it is highly recommended that you
@@ -34,7 +34,7 @@ on or off, rather than scrolling to it.
 
 When you are done selecting your language(s), click "Hide Form" to hide
 the form again and enjoy your greatly decluttered Rosetta Code
-browsing experience.
+browsing experience. :)
 
 Your language preferences will be persisted as you navigate between
 programming tasks and also after closing and reopening the browser.
