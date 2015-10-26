@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "Rosetta Code Languages Selector",
+  "description": "At rosettacode.org, see code samples for only the languages that you select.",
+  "version": "0.0.1",
+
+  "content_scripts": [
+    {
+      "matches": [
+        "http://rosettacode.org/*",
+        "https://rosettacode.org/*"
+      ],
+      "css": ["css/languages-selector.css"],
+      "js": [
+        "vendor/jquery-2.1.4.min.js",
+        "vendor/underscore.min.js",
+        "js/show-only-selected-languages.js",
+        "js/languages-selector.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "html/languages-selector.html", "html/languages.html"
+  ]
+}

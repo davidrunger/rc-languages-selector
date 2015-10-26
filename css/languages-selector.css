@@ -1,0 +1,15 @@
+#rc-languages-selector {
+  padding: 10px;
+  background-color: aliceblue;
+  border: 1px dashed gray;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.rcls-hidden {
+  display: none;
+}
+
+#rc-languages-selector ul {
+  list-style: none;
+}

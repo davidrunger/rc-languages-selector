@@ -1,0 +1,35 @@
+<section id="rc-languages-selector">
+  <h3>Rosetta Code Languages Selector Extension</h3>
+
+  <p>
+    <strong>Currently showing:</strong> <span id="languages-list"></span>
+  </p>
+
+  <p>
+    <button id="toggle-form">Select Languages</button>
+  </p>
+
+  <form class="rcls-hidden">
+    <label>
+      <strong>Filter</strong>
+      <input type="text" id="search">
+    </label>
+    <button id="clear-filter">clear filter</button>
+
+    <p>
+      <label>
+        <input
+          type="checkbox"
+          id="check-all"
+          value="show-all"
+          <% if (showingAllLanguages) { %>
+            checked
+          <% }  %>
+        >
+        <strong>Toggle all</strong>
+      </label>
+    </p>
+
+    <ul id="languages"></ul>
+  </form>
+</section>
