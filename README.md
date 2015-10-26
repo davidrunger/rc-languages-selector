@@ -11,7 +11,10 @@ specifically selected.
 
 # Installation
 
-*Coming soon.*
+Via the Google Chrome Web Store:
+[Rosetta Code Languages Selector][rcls]
+
+[rcls]: https://chrome.google.com/webstore/detail/rosetta-code-languages-se/icjinpkbplhheomciikehmieadoibljg
 
 # Usage
 
