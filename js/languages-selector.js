@@ -9,8 +9,8 @@
   var isTaskPage = !!$('#catlinks a[title="Category:Programming Tasks"]').length;
   if (isTaskPage) {
     // User preferences are persisted via localStorage.
-    var previouslyStoredLanguages = window.localStorage.selectedLanguages &&
-      JSON.parse(window.localStorage.selectedLanguages);
+    var previouslyStoredLanguages = window.localStorage.rclsSelectedLanguages &&
+      JSON.parse(window.localStorage.rclsSelectedLanguages);
     var showingForm = false;
     selectedLanguages = previouslyStoredLanguages || allLanguages;
     runExtension();
@@ -125,7 +125,7 @@
           }
         }
       }
-      window.localStorage.setItem( 'selectedLanguages', JSON.stringify(selectedLanguages) );
+      window.localStorage.setItem( 'rclsSelectedLanguages', JSON.stringify(selectedLanguages) );
       renderLanguagesList();
       window.showOnlySelectedLanguages(selectedLanguages);
     });
