@@ -22,12 +22,13 @@
       "js": [
         "vendor/jquery-2.1.4.min.js",
         "vendor/underscore.min.js",
+        "js/all-languages.js",
         "js/show-only-selected-languages.js",
         "js/languages-selector.js"
       ]
     }
   ],
   "web_accessible_resources": [
-    "html/languages-selector.html", "html/languages.html"
+    "html/languages-selector-main.html", "html/language-checkboxes.html"
   ]
 }
