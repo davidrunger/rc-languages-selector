@@ -1,3 +1,12 @@
 # Unreleased
 
-2015-11-10: Added change log. Added comments to HTML and JS. Refactored JS.
+### Noteworthy changes
+
+* The Table of Contents of a programming task page is now filtered, too
+  (that is, in addition to the code samples)
+
+### Other changes
+
+* Added change log.
+* Added many more comments to HTML and JS.
+* Refactored JS.

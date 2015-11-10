@@ -67,7 +67,7 @@
   function injectListOfSelectedLanguages() {
     var languagesList;
     if (selectedLanguages.length === 0) {
-      languagesList = 'No languages';
+      languagesList = 'None';
     }
     else if (selectedLanguages.length > 20) {
       languagesList = selectedLanguages.length + ' languages';
