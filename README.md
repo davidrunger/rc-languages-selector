@@ -49,6 +49,12 @@ the browser.
 
 Enjoy your greatly decluttered Rosetta Code browsing experience. :)
 
+# Changelog
+
+[See here.][changelog]
+
+[changelog]: ./CHANGELOG.md
+
 # Contributing
 
 Open an issue and/or pull request. Thanks!
