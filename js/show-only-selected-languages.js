@@ -13,7 +13,9 @@
     var $tocLinks = $('#toc').find('.toclevel-1');
 
     var test = function ($el) {
-      var language = $el.find('.toctext').text();
+      // `eq(0)` because there could be subheadings with class `toctext` that we
+      // don't want to include
+      var language = $el.find('.toctext').eq(0).text();
       return isLanguageSelected(selectedLanguages, language);
     }
 
