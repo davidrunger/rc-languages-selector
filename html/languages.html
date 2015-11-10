@@ -1,13 +1,9 @@
 <% filteredLanguages.forEach(function (language) { %>
+  <% var isSelected = (selectedLanguages.indexOf(language) !== -1) %>
   <li>
     <label>
-      <input
-        type="checkbox"
-        value="<%= language %>"
-        <% if (selectedLanguages.indexOf(language) !== -1) { %>
-          checked
-        <% }  %>
-      >
+      <input type="checkbox" value="<%= language %>"
+        <%= isSelected ? 'checked' : '' %>>
       <%= language %>
     </label>
   </li>

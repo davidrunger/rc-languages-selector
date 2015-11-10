@@ -2,7 +2,10 @@
   <h3>Rosetta Code Languages Selector</h3>
 
   <p>
-    <strong>Currently showing:</strong> <span id="languages-list"></span>
+    <strong>Currently showing:</strong>
+    <span id="languages-list">
+      <!-- list of currently selected languages injected here -->
+    </span>
   </p>
 
   <p>
@@ -18,18 +21,14 @@
 
     <p>
       <label>
-        <input
-          type="checkbox"
-          id="check-all"
-          value="show-all"
-          <% if (showingAllLanguages) { %>
-            checked
-          <% }  %>
-        >
+        <input type="checkbox" id="check-all" value="show-all"
+          <%= showingAllLanguages ? 'checked' : '' %>>
         <strong>Toggle all</strong>
       </label>
     </p>
 
-    <ul id="languages"></ul>
+    <ul id="languages">
+      <!-- checkboxes for each individual language injected here -->
+    </ul>
   </form>
 </section>
