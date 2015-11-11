@@ -1,5 +1,5 @@
 // This is the main extension file, where the extension is started
-;(function () {
+$(function () {
   'use strict';
   // Is the current page a Programming Task?
   var isTaskPage = !!$('#catlinks a[title="Category:Programming Tasks"]').length;
@@ -111,7 +111,7 @@
     $('#rc-languages-selector #toggle-form').click(function (event) {
       event.preventDefault();
       showingForm = !showingForm;
-      this.innerText = showingForm ? 'Hide Form' : 'Select Languages';
+      event.target.innerText = showingForm ? 'Hide Form' : 'Select Languages';
       $('#rc-languages-selector form').toggleClass('rcls-hidden');
     });
 
@@ -172,4 +172,4 @@
       handleSelectedLanguagesChange();
     });
   }
-}());
+});
