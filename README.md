@@ -35,7 +35,7 @@ something like this at the top of the page:
 Click the "Select Languages" button to reveal a form that allows you to
 select which languages to display.
 
-![Languages Selector Screenshot](images/screenshot-expanded-small.png?raw=true)
+![Languages Selector Screenshot](images/screenshot-expanded-640x400.png?raw=true)
 
 You can select all/none of the languages using the "Toggle all" button.
 Because there are so many languages, it is highly recommended that you
