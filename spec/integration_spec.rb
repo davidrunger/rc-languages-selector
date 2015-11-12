@@ -1,6 +1,8 @@
 require_relative 'spec_helper'
 
+# constant used by ExtensionScope mixin to create `extension` scope method
 RCLS_ID = '#rc-languages-selector'
+# Command to run the test server: `ruby spec/test_server.rb`
 TASK_PAGE = 'http://localhost:4567/support/hello_world_task.html'
 
 describe 'Rosetta Code Languages Selector', type: :feature, js: true do
