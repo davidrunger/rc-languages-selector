@@ -1,4 +1,10 @@
-## 0.1.2
+## 0.1.3 (2015-11-12)
+
+#### Minor changes
+
+* Fix issue: toggling all languages wasn't persisting that preference
+
+## 0.1.2 (2015-11-12)
 
 #### Major changes
 
