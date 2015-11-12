@@ -102,6 +102,12 @@ $(function () {
   }
 
   function handleSelectedLanguagesChange() {
+    // store the user's updated set of languages in localStorage
+    window.localStorage.setItem(
+      LOCAL_STORAGE_KEY,
+      JSON.stringify(selectedLanguages)
+    );
+
     injectListOfSelectedLanguages();
     showOnlySelectedLanguages(selectedLanguages);
   }
@@ -162,12 +168,6 @@ $(function () {
           selectedLanguages.splice(idx, 1);
         }
       }
-
-      // store the user's updated set of languages in localStorage
-      window.localStorage.setItem(
-        LOCAL_STORAGE_KEY,
-        JSON.stringify(selectedLanguages)
-      );
 
       handleSelectedLanguagesChange();
     });
