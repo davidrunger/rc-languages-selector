@@ -97,7 +97,7 @@ describe 'Rosetta Code Languages Selector', type: :feature, js: true do
 
     feature 'when toggling a language off' do
       before(:each) do
-        page.find('input[type=checkbox][value=Ruby]').click
+        page.find('label.rcls-checkbox-label', text: /\ARuby\z/).click
       end
 
       it 'hides the table of contents entry' do
@@ -114,7 +114,7 @@ describe 'Rosetta Code Languages Selector', type: :feature, js: true do
       end
 
       it 'can be toggled back on' do
-        page.find('input[type=checkbox][value=Ruby]').click
+        page.find('label.rcls-checkbox-label', text: /\ARuby\z/).click
         expect(page).to have_css('#toc span', text: 'Ruby')
         expect(page).to have_css('h2 span', text: 'Ruby')
         expect(page).to have_content('STDOUT.write "Hello world!\n"')
@@ -124,7 +124,7 @@ describe 'Rosetta Code Languages Selector', type: :feature, js: true do
     feature 'when toggling all languages' do
       before(:each) do
         expect(extension.find('input#check-all[type=checkbox]')).to be_checked
-        extension.find('input#check-all[type=checkbox]').click # toggle it off
+        extension.find('label[for=check-all]').click # toggle all off
       end
 
       it 'says that it\'s showing no languages' do
@@ -144,9 +144,9 @@ describe 'Rosetta Code Languages Selector', type: :feature, js: true do
     feature 'when working with a smaller number of languages' do
       before(:each) do
         expect(extension.find('input#check-all[type=checkbox]')).to be_checked
-        extension.find('input#check-all[type=checkbox]').click # toggle off
-        extension.find('input[type=checkbox][value=Ruby]').click
-        extension.find('input[type=checkbox][value=Python]').click
+        extension.find('label[for=check-all]').click # toggle all off
+        extension.find('label.rcls-checkbox-label', text: /\ARuby\z/).click
+        extension.find('label.rcls-checkbox-label', text: /\APython\z/).click
       end
 
       it 'lists the individual languages' do
@@ -157,12 +157,12 @@ describe 'Rosetta Code Languages Selector', type: :feature, js: true do
     feature 'when navigating away from the page and back' do
       before(:each) do
         expect(extension.find('input#check-all[type=checkbox]')).to be_checked
-        extension.find('input#check-all[type=checkbox]').click # toggle off all
+        extension.find('label[for=check-all]').click # toggle all off
       end
 
       it 'persists the selection of a few languages' do
-        extension.find('input[type=checkbox][value=Ruby]').click # enable Ruby
-        extension.find('input[type=checkbox][value=C]').click # enable C
+        extension.find('label.rcls-checkbox-label', text: /\ARuby\z/).click
+        extension.find('label.rcls-checkbox-label', text: /\AC\z/).click
         expect(page).to have_content('Currently showing: C, Ruby')
         visit 'http://www.google.com', reset_local_storage: false
         visit TASK_PAGE, reset_local_storage: false
@@ -170,8 +170,8 @@ describe 'Rosetta Code Languages Selector', type: :feature, js: true do
       end
 
       it 'persists the selection of all languages' do
-        extension.find('input[type=checkbox][value=Ruby]').click # enable Ruby
-        extension.find('input#check-all[type=checkbox]').click # toggle on all
+        extension.find('label.rcls-checkbox-label', text: /\ARuby\z/).click
+        extension.find('label[for=check-all]').click # toggle all on
         expect(page).to have_content('Currently showing: 591 languages')
         visit 'http://www.google.com', reset_local_storage: false
         visit TASK_PAGE, reset_local_storage: false

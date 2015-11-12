@@ -1,5 +1,9 @@
 ## Unreleased
 
+#### Major changes
+
+* Add styling
+
 #### Minor changes
 
 * Add comments to tests

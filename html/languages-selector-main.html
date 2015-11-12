@@ -9,20 +9,21 @@
   </p>
 
   <p>
-    <button id="toggle-form">Select Languages</button>
+    <button id="toggle-form" class="rcls-button">
+      <span class="arrow-icon-down">⌵</span>
+      <span class="text-show">Select Languages</span>
+    </button>
   </p>
 
   <form class="rcls-hidden">
-    <label for="search"><strong>Filter</strong></label>
+    <label for="search">Filter:</label>
     <input type="text" id="search">
-    <button id="clear-filter">clear filter</button>
+    <button id="clear-filter" class="rcls-button">clear filter</button>
 
     <p>
-      <label>
-        <input type="checkbox" id="check-all"
-          <%= showingAllLanguages ? 'checked' : '' %>>
-        <strong>Toggle all</strong>
-      </label>
+      <input type="checkbox" id="check-all" class="rcls-checkbox"
+        <%= showingAllLanguages ? 'checked' : '' %>>
+      <label for="check-all" class="rcls-checkbox-label">Toggle all</label>
     </p>
 
     <ul id="languages">

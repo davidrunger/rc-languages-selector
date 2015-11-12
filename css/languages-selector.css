@@ -1,8 +1,7 @@
 #rc-languages-selector {
-  padding: 10px;
-  background-color: aliceblue;
-  border: 1px dashed gray;
-  border-radius: 3px;
+  padding: 3px 20px 1px;
+  background-color: #FCFDFE;
+  border: 1px solid #E0E0E0;
   margin-bottom: 10px;
 }
 
@@ -10,6 +9,112 @@
   display: none;
 }
 
+#rc-languages-selector h3 {
+  float: left;
+  margin-bottom: 9px;
+  font-weight: normal;
+  border-bottom: 1px solid #BFBFBF;
+}
+
+#rc-languages-selector p {
+  clear: both;
+}
+
 #rc-languages-selector ul {
   list-style: none;
+}
+
+.rcls-button {
+  padding: 5px 14px;
+  box-shadow: none;
+  -webkit-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: .3s;
+  transition-duration: .3s;
+  color: #FFF;
+  background: #4AC8F2;
+  font-size: 13px;
+  text-shadow: none;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#rc-languages-selector button#toggle-form {
+  width: 160px;
+  height: 32px;
+}
+
+#clear-filter {
+  padding: 2px 3px;
+  background: rgba(0,0,0,0);
+  color: #888888;
+  border: 1px solid #bbb;
+  font-size: 11px;
+}
+
+.rcls-button:hover {
+  background: #7BDAF9;
+  outline-width: 0;
+}
+
+.rcls-button:active, .rcls-button:focus {
+  outline-width: 1px;
+}
+
+.arrow-icon-down {
+  position: relative;
+  top: -8px;
+  font-size: 24px;
+}
+
+.arrow-icon-up {
+  position: relative;
+  top: 3px;
+  font-size: 20px;
+}
+
+button#toggle-form .text-show {
+  padding-left: 5px;
+  position: relative;
+  top: -10px;
+}
+
+button#toggle-form .text-hide {
+  padding-left: 5px;
+  position: relative;
+  top: -3px;
+}
+
+.rcls-checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.rcls-checkbox, .rcls-checkbox-label {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.rcls-checkbox-label {
+  position: relative;
+}
+
+.rcls-checkbox + .rcls-checkbox-label:before {
+  content: "";
+  background: #fff;
+  border: 2px solid #eee;
+  display: inline-block;
+  vertical-align: middle;
+  width: 11px;
+  height: 11px;
+  padding: 2px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.rcls-checkbox:checked + .rcls-checkbox-label:before {
+  background: #aaa;
 }

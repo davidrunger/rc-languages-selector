@@ -117,7 +117,9 @@ $(function () {
     $('#rc-languages-selector #toggle-form').click(function (event) {
       event.preventDefault();
       showingForm = !showingForm;
-      event.target.innerText = showingForm ? 'Hide Form' : 'Select Languages';
+      var hideFormHtml = '<span class="arrow-icon-up">⌃</span><span class="text-hide">Hide Form</span>'
+      var showFormHtml = '<span class="arrow-icon-down">⌵</span><span class="text-show">Select Languages</span>'
+      $(event.currentTarget).html(showingForm ? hideFormHtml : showFormHtml);
       $('#rc-languages-selector form').toggleClass('rcls-hidden');
     });
 
