@@ -1,3 +1,9 @@
+## Unreleased
+
+#### Minor changes
+
+* Change ordering of CSS properties
+
 ## 0.1.6 (2015-12-09)
 
 #### Minor changes
