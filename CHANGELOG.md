@@ -1,3 +1,9 @@
+## 0.1.6 (2015-12-09)
+
+#### Minor changes
+
+* Line up checkboxes with their labels
+
 ## 0.1.5 (2015-12-09)
 
 #### Major changes
