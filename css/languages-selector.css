@@ -26,6 +26,8 @@
 
 .rcls-button {
   padding: 5px 14px;
+  width: 160px;
+  height: 32px;
   box-shadow: none;
   -webkit-transition-property: background;
   transition-property: background;
@@ -34,23 +36,11 @@
   color: #FFF;
   background: #4AC8F2;
   font-size: 13px;
+  vertical-align: top;
   text-shadow: none;
   border: none;
   overflow: hidden;
   cursor: pointer;
-}
-
-#rc-languages-selector button#toggle-form {
-  width: 160px;
-  height: 32px;
-}
-
-#clear-filter {
-  padding: 2px 3px;
-  background: rgba(0,0,0,0);
-  color: #888888;
-  border: 1px solid #bbb;
-  font-size: 11px;
 }
 
 .rcls-button:hover {
@@ -60,6 +50,22 @@
 
 .rcls-button:active, .rcls-button:focus {
   outline-width: 1px;
+}
+
+.rcls-button.danger {
+  background: #D94596;
+}
+
+.rcls-button.danger:hover {
+  background: #DD6FAD;
+}
+
+#clear-filter {
+  padding: 2px 3px;
+  background: rgba(0,0,0,0);
+  color: #888888;
+  border: 1px solid #bbb;
+  font-size: 11px;
 }
 
 .arrow-icon-down {

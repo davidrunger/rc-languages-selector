@@ -1,3 +1,11 @@
+## Unreleased
+
+#### Major changes
+
+* Add pause button (so you can temporarily view all code samples but not
+  lose your list of selected languages, which is what previously
+  happened when using the "Toggle All" button)
+
 ## 0.1.4 (2015-11-12)
 
 #### Major changes

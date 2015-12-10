@@ -9,6 +9,7 @@ $(function () {
     var selectedLanguages;
     var languageCheckboxesTemplateFn;
     var showingForm = false;
+    var paused = false;
     var LOCAL_STORAGE_KEY = 'rcls-selected-languages';
     var allLanguages = window.rclsAllLanguages;
 
@@ -64,9 +65,11 @@ $(function () {
   }
 
   // Gives a summary of which languages are currently being displayed.
-  function injectListOfSelectedLanguages() {
+  function injectListOfSelectedLanguages(text) {
     var languagesList;
-    if (selectedLanguages.length === 0) {
+    if (text) {
+      languagesList = text;
+    } else if (selectedLanguages.length === 0) {
       languagesList = 'None';
     }
     else if (selectedLanguages.length > 20) {
@@ -112,6 +115,16 @@ $(function () {
     showOnlySelectedLanguages(selectedLanguages);
   }
 
+  function pause() {
+    injectListOfSelectedLanguages('All languages. Filtering is paused.');
+    showOnlySelectedLanguages(allLanguages);
+  }
+
+  function unpause() {
+    injectListOfSelectedLanguages();
+    showOnlySelectedLanguages(selectedLanguages);
+  }
+
   function bindHandlers() {
     // shows/hides the form
     $('#rc-languages-selector #toggle-form').click(function (event) {
@@ -121,6 +134,15 @@ $(function () {
       var showFormHtml = '<span class="arrow-icon-down">⌵</span><span class="text-show">Select Languages</span>'
       $(event.currentTarget).html(showingForm ? hideFormHtml : showFormHtml);
       $('#rc-languages-selector form').toggleClass('rcls-hidden');
+    });
+
+    $('#rc-languages-selector #pause').click(function (event) {
+      event.preventDefault();
+      paused = !paused;
+      var resumeHtml = '<span class="text-hide">Resume Filtering</span>'
+      var pauseHtml = '<span class="text-hide">Pause Filtering</span>'
+      $(event.currentTarget).html(paused ? resumeHtml : pauseHtml);
+      paused ? pause() : unpause();
     });
 
     // clears the filter input (and focuses it for user convenience)

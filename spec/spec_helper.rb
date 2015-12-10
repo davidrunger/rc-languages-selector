@@ -3,6 +3,11 @@ require 'capybara/poltergeist'
 require 'capybara/rspec'
 require 'json'
 
+RSpec.configure do |config|
+  config.filter_run focus: true
+  config.run_all_when_everything_filtered = true
+end
+
 Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |f| require f }
 
 Capybara.register_driver :poltergeist do |app|

@@ -183,6 +183,7 @@ describe 'Rosetta Code Languages Selector', type: :feature, js: true do
   feature 'when pausing the extension' do
     before(:each) do
       page.visit(TASK_PAGE)
+      extension.click_button('Select Languages')
       expect(extension.find('input#check-all[type=checkbox]')).to be_checked
       # toggle all off:
       extension.find('label[for=check-all]').click
@@ -193,7 +194,7 @@ describe 'Rosetta Code Languages Selector', type: :feature, js: true do
     it 'shows all languages' do
       extension.click_button 'Pause Filtering'
 
-      paused_string = 'Filtering paused. Temporarily showing all languages.'
+      paused_string = 'Currently showing: All languages. Filtering is paused.'
       expect(extension).to have_content(paused_string)
       # Random example; Ruby should be shown when filtering is paused
       expect(page).to have_css('#toc span', text: 'Ruby')
