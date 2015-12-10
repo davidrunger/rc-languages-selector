@@ -1,9 +1,16 @@
 <% filteredLanguages.forEach(function (language) { %>
   <% var isSelected = (selectedLanguages.indexOf(language) !== -1) %>
   <li>
-    <input type="checkbox" class="rcls-checkbox" value="<%= language %>"
-      id="rcls-<%= encodeURIComponent(language) %>" <%= isSelected ? 'checked' : '' %>>
-    <label class="rcls-checkbox-label" for="rcls-<%= encodeURIComponent(language) %>">
+    <input
+      type="checkbox"
+      class="rcls-checkbox"
+      value="<%= language %>"
+      id="rcls-<%= encodeURIComponent(language) %>"
+      <%= isSelected ? 'checked' : '' %>>
+    <label
+      class="rcls-checkbox-label"
+      for="rcls-<%= encodeURIComponent(language) %>"
+    >
       <%= language %>
     </label>
   </li>
