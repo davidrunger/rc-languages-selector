@@ -23,8 +23,8 @@
         "js/vendor/jquery-2.1.4.min.js",
         "js/vendor/underscore.min.js",
         "js/all-languages.js",
-        "js/show-only-selected-languages.js",
-        "js/languages-selector.js"
+        "js/languages-selector.js",
+        "js/initialize.js"
       ]
     }
   ],

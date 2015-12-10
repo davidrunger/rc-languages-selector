@@ -1,5 +1,9 @@
 ## Unreleased
 
+#### Major changes
+
+* refactor JS to object-oriented design
+
 #### Minor changes
 
 * Change ordering of CSS properties
