@@ -109,6 +109,8 @@ button#toggle-form .text-hide {
 }
 
 .rcls-checkbox + .rcls-checkbox-label:before {
+  position: relative;
+  top: -2px;
   content: "";
   background: #fff;
   border: 2px solid #eee;
