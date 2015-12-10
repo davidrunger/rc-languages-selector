@@ -1,9 +1,7 @@
 ;(function () {
-  // This variable is closed over by multiple functions below.
   var showingElements;
 
-  // A globally exported function. Manipulates the page to only show code samples
-  // for selected languages, hiding all other code samples (and headings).
+  // Manipulates the DOM to show only the user's selected languages
   window.showOnlySelectedLanguages = function showOnlySelectedLanguages(selectedLanguages) {
     showOrHideEachTableOfContentsLink(selectedLanguages);
     showOrHideEachContentSection(selectedLanguages);
@@ -88,7 +86,6 @@
       return true;
     }
 
-    // normal case
     return selectedLanguages.some(function (selectedLanguage) {
       // sometimes the languages are capitalized inconsistently
       return language.toLowerCase() === selectedLanguage.toLowerCase();
