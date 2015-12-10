@@ -55,6 +55,20 @@ Enjoy your greatly decluttered Rosetta Code browsing experience. :)
 
 [changelog]: ./CHANGELOG.md
 
+# Running the Tests
+
+From the root directory of the project, launch the test server with
+
+```sh
+ruby spec/test_server.rb
+```
+
+In a separate tab, run the tests with
+
+```sh
+rspec
+```
+
 # Contributing
 
 Open an issue and/or pull request. Thanks!
