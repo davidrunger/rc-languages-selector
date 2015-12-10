@@ -3,6 +3,7 @@
 #### Minor changes
 
 * Change ordering of CSS properties
+* very minor reformatting of HTML templates
 
 ## 0.1.6 (2015-12-09)
 
