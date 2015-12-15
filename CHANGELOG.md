@@ -1,3 +1,11 @@
+## Unreleased
+
+#### Minor changes
+
+* update README.md with "Pause filtering" button
+* additional tidying of README.md
+* update screenshots
+
 ## 0.1.7 (2015-12-15)
 
 #### Major changes
