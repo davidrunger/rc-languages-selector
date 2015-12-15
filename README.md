@@ -26,7 +26,7 @@ Navigate to any programming Task page at [rosettacode.org][rosettacode].
 After the page loads, the extension will inject a box that looks
 something like this at the top of the page:
 
-![Languages Selector Screenshot](images/screenshot-collapsed-small.png?raw=true)
+![Languages Selector Screenshot](images/screenshot-collapsed.png?raw=true)
 
 Click the "Select Languages" button to reveal a form that allows you to
 select which languages to display.
