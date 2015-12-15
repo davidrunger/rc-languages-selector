@@ -19,11 +19,7 @@ Install through the Google Chrome Web Store:
 # Usage
 
 Navigate to any programming Task page at [rosettacode.org][rosettacode].
-
 *Note*: The extension will only be activated on Task pages.
-
-*Bonus tip*: I find that some of the best sample tasks are those that
-are most edited. See Rosetta Code's [most revised pages][most-revised].
 
 [most-revised]: http://rosettacode.org/wiki/Special:MostRevisions
 
@@ -46,6 +42,9 @@ When you are done selecting your language(s), click "Hide Form" to hide
 the form again. Your language preferences will be persisted as you
 navigate between programming tasks and also after closing and reopening
 the browser.
+
+"Pause Filtering" will temporarily show all languages and allow you
+later to resume filtering your selected list of languages.
 
 Enjoy your greatly decluttered Rosetta Code browsing experience. :)
 
