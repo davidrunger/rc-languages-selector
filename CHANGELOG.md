@@ -8,6 +8,7 @@
 
 * Change ordering of CSS properties
 * minor reformatting of HTML templates
+* make "clear filter button smaller"
 
 ## 0.1.6 (2015-12-09)
 
