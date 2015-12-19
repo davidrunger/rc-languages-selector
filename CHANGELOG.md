@@ -4,6 +4,7 @@
 
 * extension now launches on "draft" task pages (in addition to regular
   task pages)
+* remove unnecessary `js: true` statements from the specs
 
 ## v0.1.8 (2015-12-15)
 

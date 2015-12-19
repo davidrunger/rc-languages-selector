@@ -6,7 +6,7 @@ RCLS_ID = '#rc-languages-selector'
 SERVER_ROOT = 'http://localhost:4567'
 TASK_PAGE = SERVER_ROOT + '/support/hello_world_task.html'
 
-describe 'Rosetta Code Languages Selector', type: :feature, js: true do
+describe 'Rosetta Code Languages Selector', type: :feature do
   feature "when it shouldn't be active" do
     it "doesn't inject itself on the home page" do
       page.visit('http://rosettacode.org/')
@@ -20,12 +20,12 @@ describe 'Rosetta Code Languages Selector', type: :feature, js: true do
   end
 
   feature 'when it should be active' do
-    it 'injects itself on a task page', js: :true do
+    it 'injects itself on a task page' do
       page.visit(TASK_PAGE)
       expect(page).to have_content 'Rosetta Code Languages Selector'
     end
 
-    it 'injects itself on a draft task page', js: :true do
+    it 'injects itself on a draft task page' do
       draft_task_page = SERVER_ROOT + '/support/longest_common_substring_draft_task.html'
       page.visit(draft_task_page)
       expect(page).to have_content 'Rosetta Code Languages Selector'
@@ -142,7 +142,7 @@ describe 'Rosetta Code Languages Selector', type: :feature, js: true do
         expect(page).not_to have_css('#toc ~ *')
       end
 
-      it 'toggles off individual language checkboxes', js: true do
+      it 'toggles off individual language checkboxes' do
         ruby_checkbox = 'input[type=checkbox][value=Ruby]'
         expect(extension.find(ruby_checkbox)).not_to be_checked
       end
