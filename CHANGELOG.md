@@ -1,4 +1,4 @@
-## Unreleased (2015-12-18)
+## v0.1.9 (2015-12-18)
 
 #### Minor changes
 
