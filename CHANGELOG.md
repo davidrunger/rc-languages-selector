@@ -1,3 +1,10 @@
+## Unreleased (2015-12-18)
+
+#### Minor changes
+
+* extension now launches on "draft" task pages (in addition to regular
+  task pages)
+
 ## v0.1.8 (2015-12-15)
 
 #### Minor changes

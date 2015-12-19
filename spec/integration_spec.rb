@@ -3,7 +3,8 @@ require_relative 'spec_helper'
 # constant used by ExtensionScope mixin to create `extension` scope method
 RCLS_ID = '#rc-languages-selector'
 # Command to run the test server: `ruby spec/test_server.rb`
-TASK_PAGE = 'http://localhost:4567/support/hello_world_task.html'
+SERVER_ROOT = 'http://localhost:4567'
+TASK_PAGE = SERVER_ROOT + '/support/hello_world_task.html'
 
 describe 'Rosetta Code Languages Selector', type: :feature, js: true do
   feature "when it shouldn't be active" do
@@ -19,8 +20,14 @@ describe 'Rosetta Code Languages Selector', type: :feature, js: true do
   end
 
   feature 'when it should be active' do
-    it 'injects itself', js: :true do
+    it 'injects itself on a task page', js: :true do
       page.visit(TASK_PAGE)
+      expect(page).to have_content 'Rosetta Code Languages Selector'
+    end
+
+    it 'injects itself on a draft task page', js: :true do
+      draft_task_page = SERVER_ROOT + '/support/longest_common_substring_draft_task.html'
+      page.visit(draft_task_page)
       expect(page).to have_content 'Rosetta Code Languages Selector'
     end
   end

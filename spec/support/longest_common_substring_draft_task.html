@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<title>Longest Common Substring - Rosetta Code</title>
+<meta charset="UTF-8"/>
+<meta name="generator" content="MediaWiki 1.20.3"/>
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"0d009ef37ce573456e42c9ce31e2dd3b",petok:"1e0877a86fb038f2ddc0d9798dcfefd81586569a-1450498596-1800",zone:"rosettacode.org",rocket:"0",apps:{"ga_key":{"ua":"UA-1219419-1","ga_bs":"2"}},sha2test:0}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=38857570ac/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<link rel="alternate" type="application/x-wiki" title="Edit" href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit"/>
+<link rel="edit" title="Edit" href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/mw/opensearch_desc.php" title="Rosetta Code (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://rosettacode.org/mw/api.php?action=rsd"/>
+<link rel="copyright" href="http://www.gnu.org/licenses/fdl-1.2.html"/>
+<link rel="alternate" type="application/atom+xml" title="Rosetta Code Atom feed" href="/mw/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<link rel="stylesheet" href="http://rosettacode.org/mw/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="http://rosettacode.org/mw/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*"/>
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script src="http://rosettacode.org/mw/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Longest_Common_Substring","wgTitle":"Longest Common Substring","wgCurRevisionId":216988,"wgArticleId":18731,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Draft Programming Tasks","AutoHotkey","C++","C sharp","Elixir","Go","Haskell","J","Jq","Mathematica","Racket","REXX","Ruby","Swift","Zkl"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Longest_Common_Substring","wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgRemoveText":"Remove","sfgAutocompleteOnAllChars":false,"sfgAutocompleteValues":{},"sfgShowOnSelect":{},"sfgFormErrorsHeader":"There were errors with your form input; see below","sfgBlankErrorStr":"cannot be blank","sfgBadURLErrorStr":"must have the correct URL format, starting with \"http\"","sfgBadEmailErrorStr":"must have a valid email address format","sfgBadNumberErrorStr":"must be a valid number","sfgBadDateErrorStr":"must be a valid date","sfgAnonEditWarning":"Warning: You are not logged in. Your IP address will be recorded in this page\'s edit history."});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,
+"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs102":false,"searchNs103":false,"searchNs106":false,"searchNs107":false,"searchNs108":false,"searchNs109":false,"searchNs110":false,"searchNs111":false,"searchNs112":false,"searchNs113":false,"searchNs114":false,"searchNs115":false,"searchNs170":false,"searchNs171":false,"searchNs274":false,"searchNs275":false});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","watchToken":false});;},{},{});
+/* cache key: rosettacode:resourceloader:filter:minify-js:7:2ce58c77cc7227488637c1087f1776c6 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<link rel="alternate" type="application/rdf+xml" title="Longest Common Substring" href="/mw/index.php?title=Special:ExportRDF/Longest_Common_Substring&amp;xmlmime=rdf"/>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mw/skins/vector/csshover.min.htc")}</style><![endif]--><script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1219419-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Longest_Common_Substring skin-vector action-view vector-animateLayout">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+ 
+<div id="content" class="mw-body">
+<a id="top"></a>
+<div id="mw-js-message" style="display:none;"></div>
+ 
+<h1 id="firstHeading" class="firstHeading"><span dir="auto">Longest Common Substring</span></h1>
+ 
+ 
+<div id="bodyContent">
+ 
+<div id="siteSub">From Rosetta Code</div>
+ 
+ 
+<div id="contentSub"></div>
+ 
+ 
+<div id="jump-to-nav" class="mw-jump">
+Jump to: <a href="#mw-head">navigation</a>, <a href="#p-search">search</a>
+</div>
+ 
+ 
+<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox" style="width: 2in"><i> <b>Longest Common Substring</b> </i> is a <b>draft</b> programming task. It is not yet considered ready to be promoted as a complete task, for reasons that should be found in its <a href="/wiki/Talk:Longest_Common_Substring" title="Talk:Longest Common Substring">talk page</a>.</div>Write a function returns the longest common substring of two strings. Use it within a program that demonstrates sample output from the function, which will consist of the longest common substring between "thisisatest" and "testing123testing". Note that substrings are consecutive characters within a string. This distinguishes them from subsequences, which is any sequence of characters within a string, even if there are extraneous characters in between them. Hence, the <a href="/wiki/Longest_common_subsequence" title="Longest common subsequence">longest common subsequence</a> between "thisisatest" and "testing123testing" is "tsitest", whereas the longest common sub<i>string</i> is just "test".
+<p>References:
+</p>
+<ul><li><a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Generalized_suffix_tree">Generalize Suffix Tree</a>
+</li><li><a href="/wiki/Ukkonen%E2%80%99s_Suffix_Tree_Construction" title="Ukkonen’s Suffix Tree Construction">Ukkonen’s Suffix Tree Construction</a>
+</li></ul>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#AutoHotkey"><span class="tocnumber">1</span> <span class="toctext">AutoHotkey</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Using_Text_Comparison"><span class="tocnumber">1.1</span> <span class="toctext">Using Text Comparison</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Using_RegEx"><span class="tocnumber">1.2</span> <span class="toctext">Using RegEx</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#C.2B.2B"><span class="tocnumber">2</span> <span class="toctext">C++</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#C.23"><span class="tocnumber">3</span> <span class="toctext">C#</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Using_dynamic_programming"><span class="tocnumber">3.1</span> <span class="toctext">Using dynamic programming</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Searching_for_smaller_substrings_of_a_in_b"><span class="tocnumber">3.2</span> <span class="toctext">Searching for smaller substrings of a in b</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Searching_for_smaller_substrings_of_a_in_b_.28simplified.29"><span class="tocnumber">3.3</span> <span class="toctext">Searching for smaller substrings of a in b (simplified)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Elixir"><span class="tocnumber">4</span> <span class="toctext">Elixir</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Go"><span class="tocnumber">5</span> <span class="toctext">Go</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Haskell"><span class="tocnumber">6</span> <span class="toctext">Haskell</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#J"><span class="tocnumber">7</span> <span class="toctext">J</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#jq"><span class="tocnumber">8</span> <span class="toctext">jq</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Mathematica"><span class="tocnumber">9</span> <span class="toctext">Mathematica</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Racket"><span class="tocnumber">10</span> <span class="toctext">Racket</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#REXX"><span class="tocnumber">11</span> <span class="toctext">REXX</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Ruby"><span class="tocnumber">12</span> <span class="toctext">Ruby</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Swift"><span class="tocnumber">13</span> <span class="toctext">Swift</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#zkl"><span class="tocnumber">14</span> <span class="toctext">zkl</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=1" title="Edit section: AutoHotkey">edit</a>]</span> <span class="mw-headline" id="AutoHotkey"><a href="/wiki/Category:AutoHotkey" title="Category:AutoHotkey">AutoHotkey</a></span></h2>
+<h3><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=2" title="Edit section: Using Text Comparison">edit</a>]</span> <span class="mw-headline" id="Using_Text_Comparison">Using Text Comparison</span></h3>
+<pre class="autohotkey highlighted_source">LCS<span class="br0">&#40;</span>a<span class="sy0">,</span> b<span class="br0">&#41;</span><span class="br0">&#123;</span><br/>	x <span class="sy0">:=</span> i <span class="sy0">:=</span> <span class="nu0">1</span><br/>	<span class="kw1">while</span> <a href="http://www.autohotkey.com/docs/Functions.htm#BuiltIn"><span class="kw4">StrLen</span></a><span class="br0">&#40;</span>x<span class="br0">&#41;</span>	<br/>		<a href="http://www.autohotkey.com/docs/commands/Loop.htm"><span class="kw3">Loop</span></a>&#160;% <a href="http://www.autohotkey.com/docs/Functions.htm#BuiltIn"><span class="kw4">StrLen</span></a><span class="br0">&#40;</span>a<span class="br0">&#41;</span><br/>			<a href="http://www.autohotkey.com/docs/commands/IfInString.htm"><span class="kw3">IfInString</span></a><span class="sy0">,</span> b<span class="sy0">,</span>&#160;% x <span class="sy0">:=</span> <a href="http://www.autohotkey.com/docs/Functions.htm#BuiltIn"><span class="kw4">SubStr</span></a><span class="br0">&#40;</span>a<span class="sy0">,</span> i<span class="sy0">:=</span><a href="http://www.autohotkey.com/docs/Functions.htm#BuiltIn"><span class="kw4">StrLen</span></a><span class="br0">&#40;</span>x<span class="br0">&#41;</span><span class="sy0">=</span><span class="nu0">1</span>&#160;? i<span class="sy0">+</span><span class="nu0">1</span>&#160;: i<span class="sy0">,</span> n<span class="sy0">:=</span><a href="http://www.autohotkey.com/docs/Functions.htm#BuiltIn"><span class="kw4">StrLen</span></a><span class="br0">&#40;</span>a<span class="br0">&#41;</span><span class="sy0">+</span><span class="nu0">1</span><span class="sy0">-</span><a href="http://www.autohotkey.com/docs/Variables.htm#A_Index"><span class="kw2">A_Index</span></a><span class="br0">&#41;</span><br/>				res <span class="sy0">:=</span> <a href="http://www.autohotkey.com/docs/Functions.htm#BuiltIn"><span class="kw4">StrLen</span></a><span class="br0">&#40;</span>res<span class="br0">&#41;</span> <span class="sy0">&gt;</span> <a href="http://www.autohotkey.com/docs/Functions.htm#BuiltIn"><span class="kw4">StrLen</span></a><span class="br0">&#40;</span>x<span class="br0">&#41;</span>&#160;? res&#160;: x <br/>	<span class="kw1">return</span> res<br/><span class="br0">&#125;</span></pre>
+Examples:<pre class="autohotkey highlighted_source"><a href="http://www.autohotkey.com/docs/commands/MsgBox.htm"><span class="kw3">MsgBox</span></a>&#160;% LCS<span class="br0">&#40;</span><span class="st0">&quot;thisisatest&quot;</span><span class="sy0">,</span> <span class="st0">&quot;testing123testing&quot;</span><span class="br0">&#41;</span></pre>
+Outputs:<pre>test</pre>
+<h3><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=3" title="Edit section: Using RegEx">edit</a>]</span> <span class="mw-headline" id="Using_RegEx">Using RegEx</span></h3>
+<pre class="autohotkey highlighted_source">LCS<span class="br0">&#40;</span>a<span class="sy0">,</span> b<span class="br0">&#41;</span><span class="br0">&#123;</span><br/>	<span class="kw1">while</span> pos <span class="sy0">:=</span> <a href="http://www.autohotkey.com/docs/commands/RegExMatch.htm"><span class="kw3">RegExMatch</span></a><span class="br0">&#40;</span>a <span class="st0">&quot;`n&quot;</span> b<span class="sy0">,</span> <span class="st0">&quot;(.+)(?=.*\R.*\1)&quot;</span><span class="sy0">,</span> m<span class="sy0">,</span> pos?pos<span class="sy0">+</span><a href="http://www.autohotkey.com/docs/Functions.htm#BuiltIn"><span class="kw4">StrLen</span></a><span class="br0">&#40;</span>m<span class="br0">&#41;</span>:<span class="nu0">1</span><span class="br0">&#41;</span><br/>		res <span class="sy0">:=</span> <a href="http://www.autohotkey.com/docs/Functions.htm#BuiltIn"><span class="kw4">StrLen</span></a><span class="br0">&#40;</span>res<span class="br0">&#41;</span> <span class="sy0">&gt;</span> <a href="http://www.autohotkey.com/docs/Functions.htm#BuiltIn"><span class="kw4">StrLen</span></a><span class="br0">&#40;</span>m1<span class="br0">&#41;</span>&#160;? res&#160;: m1<br/>	<span class="kw1">return</span> res<br/><span class="br0">&#125;</span></pre>
+Examples:<pre class="autohotkey highlighted_source"><a href="http://www.autohotkey.com/docs/commands/MsgBox.htm"><span class="kw3">MsgBox</span></a>&#160;% LCS<span class="br0">&#40;</span><span class="st0">&quot;thisisatest&quot;</span><span class="sy0">,</span> <span class="st0">&quot;testing123testing&quot;</span><span class="br0">&#41;</span></pre>
+Outputs:<pre>test</pre>
+<h2><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=4" title="Edit section: C++">edit</a>]</span> <span class="mw-headline" id="C.2B.2B"><a href="/wiki/Category:C%2B%2B" title="Category:C++">C++</a></span></h2>
+<pre class="cpp highlighted_source"><span class="co2">#include &lt;string&gt;</span><br/><span class="co2">#include &lt;algorithm&gt;</span><br/><span class="co2">#include &lt;iostream&gt;</span><br/><span class="co2">#include &lt;set&gt;</span><br/><span class="co2">#include &lt;vector&gt;</span><br/>&#160;<br/><span class="kw4">void</span> findSubstrings <span class="br0">&#40;</span> <span class="kw4">const</span> std<span class="sy4">::</span><span class="me2">string</span> <span class="sy3">&amp;</span> word , std<span class="sy4">::</span><span class="me2">set</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">string</span><span class="sy1">&gt;</span> <span class="sy3">&amp;</span> substrings <span class="br0">&#41;</span> <span class="br0">&#123;</span><br/>   <span class="kw4">int</span> l <span class="sy1">=</span> word.<span class="me1">length</span><span class="br0">&#40;</span> <span class="br0">&#41;</span> <span class="sy4">;</span><br/>   <span class="kw1">for</span> <span class="br0">&#40;</span> <span class="kw4">int</span> start <span class="sy1">=</span> <span class="nu0">0</span> <span class="sy4">;</span> start <span class="sy1">&lt;</span> l <span class="sy4">;</span> start<span class="sy2">++</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span><br/>      <span class="kw1">for</span> <span class="br0">&#40;</span> <span class="kw4">int</span> length <span class="sy1">=</span> <span class="nu0">1</span> <span class="sy4">;</span> length <span class="sy1">&lt;</span> l <span class="sy2">-</span> start <span class="sy2">+</span> <span class="nu0">1</span> <span class="sy4">;</span> length<span class="sy2">++</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span><br/>	 substrings.<span class="me1">insert</span> <span class="br0">&#40;</span> word.<span class="me1">substr</span><span class="br0">&#40;</span> start , length <span class="br0">&#41;</span> <span class="br0">&#41;</span> <span class="sy4">;</span><br/>      <span class="br0">&#125;</span><br/>   <span class="br0">&#125;</span><br/><span class="br0">&#125;</span><br/>&#160;<br/>std<span class="sy4">::</span><span class="me2">string</span> lcs <span class="br0">&#40;</span> <span class="kw4">const</span> std<span class="sy4">::</span><span class="me2">string</span> <span class="sy3">&amp;</span> first , <span class="kw4">const</span> std<span class="sy4">::</span><span class="me2">string</span> <span class="sy3">&amp;</span> second <span class="br0">&#41;</span> <span class="br0">&#123;</span><br/>   std<span class="sy4">::</span><span class="me2">set</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">string</span><span class="sy1">&gt;</span> firstSubstrings , secondSubstrings <span class="sy4">;</span><br/>   findSubstrings <span class="br0">&#40;</span> first , firstSubstrings <span class="br0">&#41;</span> <span class="sy4">;</span><br/>   findSubstrings <span class="br0">&#40;</span> second , secondSubstrings <span class="br0">&#41;</span> <span class="sy4">;</span><br/>   std<span class="sy4">::</span><span class="me2">set</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">string</span><span class="sy1">&gt;</span> common <span class="sy4">;</span><br/>   std<span class="sy4">::</span><span class="me2">set_intersection</span> <span class="br0">&#40;</span> firstSubstrings.<span class="me1">begin</span><span class="br0">&#40;</span> <span class="br0">&#41;</span> , firstSubstrings.<span class="me1">end</span><span class="br0">&#40;</span> <span class="br0">&#41;</span> , <br/>	 secondSubstrings.<span class="me1">begin</span><span class="br0">&#40;</span> <span class="br0">&#41;</span> , secondSubstrings.<span class="me1">end</span><span class="br0">&#40;</span> <span class="br0">&#41;</span> ,<br/>	 std<span class="sy4">::</span><span class="me2">inserter</span> <span class="br0">&#40;</span> common , common.<span class="me1">begin</span><span class="br0">&#40;</span> <span class="br0">&#41;</span> <span class="br0">&#41;</span> <span class="br0">&#41;</span> <span class="sy4">;</span><br/>   std<span class="sy4">::</span><span class="me2">vector</span><span class="sy1">&lt;</span>std<span class="sy4">::</span><span class="me2">string</span><span class="sy1">&gt;</span> commonSubs <span class="br0">&#40;</span> common.<span class="me1">begin</span><span class="br0">&#40;</span> <span class="br0">&#41;</span> , common.<span class="me1">end</span><span class="br0">&#40;</span> <span class="br0">&#41;</span> <span class="br0">&#41;</span> <span class="sy4">;</span><br/>   std<span class="sy4">::</span><span class="me2">sort</span> <span class="br0">&#40;</span> commonSubs.<span class="me1">begin</span><span class="br0">&#40;</span> <span class="br0">&#41;</span> , commonSubs.<span class="me1">end</span><span class="br0">&#40;</span> <span class="br0">&#41;</span> , <span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#40;</span> <span class="kw4">const</span> std<span class="sy4">::</span><span class="me2">string</span> <span class="sy3">&amp;</span>s1 , <br/>	    <span class="kw4">const</span> std<span class="sy4">::</span><span class="me2">string</span> <span class="sy3">&amp;</span>s2 <span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> s1.<span class="me1">length</span><span class="br0">&#40;</span> <span class="br0">&#41;</span> <span class="sy1">&gt;</span> s2.<span class="me1">length</span><span class="br0">&#40;</span> <span class="br0">&#41;</span> <span class="sy4">;</span> <span class="br0">&#125;</span> <span class="br0">&#41;</span> <span class="sy4">;</span><br/>   <span class="kw1">return</span> <span class="sy2">*</span><span class="br0">&#40;</span>commonSubs.<span class="me1">begin</span><span class="br0">&#40;</span> <span class="br0">&#41;</span> <span class="br0">&#41;</span> <span class="sy4">;</span><br/><span class="br0">&#125;</span><br/>&#160;<br/><span class="kw4">int</span> main<span class="br0">&#40;</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span><br/>   std<span class="sy4">::</span><span class="me2">string</span> s1 <span class="br0">&#40;</span><span class="st0">&quot;thisisatest&quot;</span> <span class="br0">&#41;</span> <span class="sy4">;</span><br/>   std<span class="sy4">::</span><span class="me2">string</span> s2 <span class="br0">&#40;</span> <span class="st0">&quot;testing123testing&quot;</span> <span class="br0">&#41;</span> <span class="sy4">;</span><br/>   std<span class="sy4">::</span><span class="kw3">cout</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;The longest common substring of &quot;</span> <span class="sy1">&lt;&lt;</span> s1 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; and &quot;</span> <span class="sy1">&lt;&lt;</span> s2 <span class="sy1">&lt;&lt;</span> <span class="st0">&quot; is:<span class="es1">\n</span>&quot;</span> <span class="sy4">;</span><br/>   std<span class="sy4">::</span><span class="kw3">cout</span> <span class="sy1">&lt;&lt;</span> lcs <span class="br0">&#40;</span> s1 , s2 <span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;&#160;!<span class="es1">\n</span>&quot;</span> <span class="sy4">;</span><br/>   <span class="kw1">return</span> <span class="nu0">0</span> <span class="sy4">;</span><br/><span class="br0">&#125;</span></pre>
+<div>
+<dl><dt>Output:</div>
+</dt></dl>
+<pre>The longest common substring of thisisatest and testing123testing is:
+test&#160;!</pre>
+<h2><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=5" title="Edit section: C#">edit</a>]</span> <span class="mw-headline" id="C.23"><span id="C_sharp"><a href="/wiki/Category:C_sharp" title="Category:C sharp">C#</a></span></span></h2>
+<h3><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=6" title="Edit section: Using dynamic programming">edit</a>]</span> <span class="mw-headline" id="Using_dynamic_programming">Using dynamic programming</span></h3>
+<pre class="csharp highlighted_source"><span class="kw1">using</span> <span class="co3">System</span><span class="sy0">;</span><br/>&#160;<br/><span class="kw1">namespace</span> LongestCommonSubstring<br/><span class="br0">&#123;</span><br/>    <span class="kw4">class</span> Program<br/>    <span class="br0">&#123;</span><br/>        <span class="kw1">static</span> <span class="kw4">void</span> Main<span class="br0">&#40;</span><span class="kw4">string</span><span class="br0">&#91;</span><span class="br0">&#93;</span> args<span class="br0">&#41;</span><br/>        <span class="br0">&#123;</span><br/>            Console<span class="sy0">.</span><span class="me1">WriteLine</span><span class="br0">&#40;</span>lcs<span class="br0">&#40;</span><span class="st0">&quot;thisisatest&quot;</span>, <span class="st0">&quot;testing123testing&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br/>            Console<span class="sy0">.</span><span class="me1">ReadKey</span><span class="br0">&#40;</span><span class="kw1">true</span><span class="br0">&#41;</span><span class="sy0">;</span><br/>        <span class="br0">&#125;</span><br/>&#160;<br/>        <span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">string</span> lcs<span class="br0">&#40;</span><span class="kw4">string</span> a, <span class="kw4">string</span> b<span class="br0">&#41;</span><br/>        <span class="br0">&#123;</span><br/>            <span class="kw1">var</span> lengths <span class="sy0">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span class="kw3">new</span></a> <span class="kw4">int</span><span class="br0">&#91;</span>a<span class="sy0">.</span><span class="me1">Length</span>, b<span class="sy0">.</span><span class="me1">Length</span><span class="br0">&#93;</span><span class="sy0">;</span><br/>            <span class="kw4">int</span> greatestLength <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span><br/>            <span class="kw4">string</span> output <span class="sy0">=</span> <span class="st0">&quot;&quot;</span><span class="sy0">;</span><br/>            <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> a<span class="sy0">.</span><span class="me1">Length</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span><br/>            <span class="br0">&#123;</span><br/>                <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> j <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> j <span class="sy0">&lt;</span> b<span class="sy0">.</span><span class="me1">Length</span><span class="sy0">;</span> j<span class="sy0">++</span><span class="br0">&#41;</span><br/>                <span class="br0">&#123;</span><br/>                    <span class="kw1">if</span> <span class="br0">&#40;</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">==</span> b<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span><br/>                    <span class="br0">&#123;</span><br/>                        lengths<span class="br0">&#91;</span>i, j<span class="br0">&#93;</span> <span class="sy0">=</span> i <span class="sy0">==</span> <span class="nu0">0</span> <span class="sy0">||</span> j <span class="sy0">==</span> <span class="nu0">0</span> <span class="sy0">?</span> <span class="nu0">1</span> <span class="sy0">:</span> lengths<span class="br0">&#91;</span>i <span class="sy0">-</span> <span class="nu0">1</span>, j <span class="sy0">-</span> <span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">+</span> <span class="nu0">1</span><span class="sy0">;</span><br/>                        <span class="kw1">if</span> <span class="br0">&#40;</span>lengths<span class="br0">&#91;</span>i, j<span class="br0">&#93;</span> <span class="sy0">&gt;</span> greatestLength<span class="br0">&#41;</span><br/>                        <span class="br0">&#123;</span><br/>                            greatestLength <span class="sy0">=</span> lengths<span class="br0">&#91;</span>i, j<span class="br0">&#93;</span><span class="sy0">;</span><br/>                            output <span class="sy0">=</span> a<span class="sy0">.</span><span class="me1">Substring</span><span class="br0">&#40;</span>i <span class="sy0">-</span> greatestLength <span class="sy0">+</span> <span class="nu0">1</span>, greatestLength<span class="br0">&#41;</span><span class="sy0">;</span><br/>                        <span class="br0">&#125;</span><br/>                    <span class="br0">&#125;</span><br/>                    <span class="kw1">else</span><br/>                    <span class="br0">&#123;</span><br/>                        lengths<span class="br0">&#91;</span>i, j<span class="br0">&#93;</span> <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span><br/>                    <span class="br0">&#125;</span><br/>                <span class="br0">&#125;</span><br/>            <span class="br0">&#125;</span><br/>            <span class="kw1">return</span> output<span class="sy0">;</span><br/>        <span class="br0">&#125;</span><br/>    <span class="br0">&#125;</span><br/><span class="br0">&#125;</span></pre>
+<div>
+<dl><dt>Output:</div>
+</dt></dl>
+<pre>
+test
+</pre>
+<h3><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=7" title="Edit section: Searching for smaller substrings of a in b">edit</a>]</span> <span class="mw-headline" id="Searching_for_smaller_substrings_of_a_in_b">Searching for smaller substrings of a in b</span></h3>
+<div class="examplemeta translation"><b>Translation of</b>: <a href="/wiki/Longest_Common_Substring#REXX" title="Longest Common Substring">REXX</a></div>
+<pre class="csharp highlighted_source"><span class="co1">//C# program tests the LCSUBSTR (Longest Common Substring) subroutine.</span><br/><span class="kw1">using</span> <span class="co3">System</span><span class="sy0">;</span><br/><span class="kw1">namespace</span> LongestCommonSubstring<br/><span class="br0">&#123;</span><br/>    <span class="kw4">class</span> Program<br/>    <span class="br0">&#123;</span><br/>        <span class="kw1">static</span> <span class="kw4">void</span> Main<span class="br0">&#40;</span><span class="kw4">string</span><span class="br0">&#91;</span><span class="br0">&#93;</span> args<span class="br0">&#41;</span><br/>        <span class="br0">&#123;</span><br/>            <span class="kw4">string</span> a <span class="sy0">=</span> args<span class="sy0">.</span><span class="me1">Length</span> <span class="sy0">&gt;=</span> <span class="nu0">1</span> <span class="sy0">?</span> args<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy0">:</span> <span class="st0">&quot;&quot;</span><span class="sy0">;</span>                                             <span class="coMULTI">/*get two arguments (strings).   */</span><br/>            <span class="kw4">string</span> b <span class="sy0">=</span> args<span class="sy0">.</span><span class="me1">Length</span> <span class="sy0">==</span> <span class="nu0">2</span> <span class="sy0">?</span> args<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">:</span> <span class="st0">&quot;&quot;</span><span class="sy0">;</span><br/>            <span class="kw1">if</span> <span class="br0">&#40;</span>a <span class="sy0">==</span> <span class="st0">&quot;&quot;</span><span class="br0">&#41;</span> a <span class="sy0">=</span> <span class="st0">&quot;thisisatest&quot;</span><span class="sy0">;</span>                                                         <span class="coMULTI">/*use this string for a default. */</span><br/>            <span class="kw1">if</span> <span class="br0">&#40;</span>b <span class="sy0">==</span> <span class="st0">&quot;&quot;</span><span class="br0">&#41;</span> b <span class="sy0">=</span> <span class="st0">&quot;testing123testing&quot;</span><span class="sy0">;</span>                                                   <span class="coMULTI">/* &quot;    &quot;     &quot;    &quot;  &quot;    &quot;     */</span><br/>            Console<span class="sy0">.</span><span class="me1">WriteLine</span><span class="br0">&#40;</span><span class="st0">&quot;string A = {0}&quot;</span>, a<span class="br0">&#41;</span><span class="sy0">;</span>                                                 <span class="coMULTI">/*echo string  A  to screen.     */</span><br/>            Console<span class="sy0">.</span><span class="me1">WriteLine</span><span class="br0">&#40;</span><span class="st0">&quot;string B = {0}&quot;</span>, b<span class="br0">&#41;</span><span class="sy0">;</span>                                                 <span class="coMULTI">/*echo string  B  to screen.     */</span><br/>            Console<span class="sy0">.</span><span class="me1">WriteLine</span><span class="br0">&#40;</span><span class="st0">&quot;LCsubstr = {0}&quot;</span>, LCsubstr<span class="br0">&#40;</span>a, b<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>                                    <span class="coMULTI">/*tell Longest Common Substring. */</span><br/>            Console<span class="sy0">.</span><span class="me1">ReadKey</span><span class="br0">&#40;</span><span class="kw1">true</span><span class="br0">&#41;</span><span class="sy0">;</span><br/>        <span class="br0">&#125;</span>                                                                                           <span class="coMULTI">/*stick a fork in it, we're done.*/</span><br/>&#160;<br/>        <span class="coMULTI">/*─────────────────────────────────LCSUBSTR subroutine─────────────────────────────────*/</span><br/>        <span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">string</span> LCsubstr<span class="br0">&#40;</span><span class="kw4">string</span> x, <span class="kw4">string</span> y<span class="br0">&#41;</span>                                           <span class="coMULTI">/*Longest Common Substring.      */</span><br/>        <span class="br0">&#123;</span><br/>            <span class="kw4">string</span> output <span class="sy0">=</span> <span class="st0">&quot;&quot;</span><span class="sy0">;</span><br/>            <span class="kw4">int</span> lenx <span class="sy0">=</span> x<span class="sy0">.</span><span class="me1">Length</span><span class="sy0">;</span>                                                                    <span class="coMULTI">/*shortcut for using the X length*/</span><br/>            <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> j <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> j <span class="sy0">&lt;</span> lenx<span class="sy0">;</span> j<span class="sy0">++</span><span class="br0">&#41;</span>                                                          <span class="coMULTI">/*step through start points in X.*/</span><br/>            <span class="br0">&#123;</span><br/>                <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> k <span class="sy0">=</span> lenx <span class="sy0">-</span> j<span class="sy0">;</span> k <span class="sy0">&gt;</span> <span class="sy0">-</span><span class="nu0">1</span><span class="sy0">;</span> k<span class="sy0">--</span><span class="br0">&#41;</span>                                                 <span class="coMULTI">/*step through string lengths.   */</span><br/>                <span class="br0">&#123;</span><br/>                    <span class="kw4">string</span> common <span class="sy0">=</span> x<span class="sy0">.</span><span class="me1">Substring</span><span class="br0">&#40;</span>j, k<span class="br0">&#41;</span><span class="sy0">;</span>                                              <span class="coMULTI">/*extract a common substring.    */</span><br/>                    <span class="kw1">if</span> <span class="br0">&#40;</span>y<span class="sy0">.</span><span class="me1">IndexOf</span><span class="br0">&#40;</span>common<span class="br0">&#41;</span> <span class="sy0">&gt;</span> <span class="sy0">-</span><span class="nu0">1</span> <span class="sy0">&amp;&amp;</span> common<span class="sy0">.</span><span class="me1">Length</span> <span class="sy0">&gt;</span> output<span class="sy0">.</span><span class="me1">Length</span><span class="br0">&#41;</span> output <span class="sy0">=</span> common<span class="sy0">;</span>   <span class="coMULTI">/*longest?*/</span><br/>                <span class="br0">&#125;</span>                                                                                   <span class="coMULTI">/*k*/</span><br/>            <span class="br0">&#125;</span>                                                                                       <span class="coMULTI">/*j*/</span><br/>            <span class="kw1">return</span> output<span class="sy0">;</span>                                                                          <span class="coMULTI">/*$  is &quot;&quot; if no common string.  */</span><br/>        <span class="br0">&#125;</span><br/>    <span class="br0">&#125;</span><br/><span class="br0">&#125;</span></pre>
+<p><b>output</b> when using the default inputs:
+</p>
+<pre>
+   string A = thisisatest
+   string B = testing123testing
+   LCsubstr = test
+</pre>
+<h3><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=8" title="Edit section: Searching for smaller substrings of a in b (simplified)">edit</a>]</span> <span class="mw-headline" id="Searching_for_smaller_substrings_of_a_in_b_.28simplified.29">Searching for smaller substrings of a in b (simplified)</span></h3>
+<div class="examplemeta translation"><b>Translation of</b>: <a href="/wiki/Longest_Common_Substring#zkl" title="Longest Common Substring">zkl</a></div>
+<pre class="csharp highlighted_source"><span class="co1">//C# program tests the LCS (Longest Common Substring) subroutine.</span><br/><span class="kw1">using</span> <span class="co3">System</span><span class="sy0">;</span><br/><span class="kw1">namespace</span> LongestCommonSubstring<br/><span class="br0">&#123;</span><br/>    <span class="kw4">class</span> Program<br/>    <span class="br0">&#123;</span><br/>        <span class="kw1">static</span> <span class="kw4">void</span> Main<span class="br0">&#40;</span><span class="kw4">string</span><span class="br0">&#91;</span><span class="br0">&#93;</span> args<span class="br0">&#41;</span><br/>        <span class="br0">&#123;</span><br/>            <span class="kw4">string</span> a <span class="sy0">=</span> args<span class="sy0">.</span><span class="me1">Length</span> <span class="sy0">&gt;=</span> <span class="nu0">1</span> <span class="sy0">?</span> args<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy0">:</span> <span class="st0">&quot;&quot;</span><span class="sy0">;</span>                                             <span class="coMULTI">/*get two arguments (strings).   */</span><br/>            <span class="kw4">string</span> b <span class="sy0">=</span> args<span class="sy0">.</span><span class="me1">Length</span> <span class="sy0">==</span> <span class="nu0">2</span> <span class="sy0">?</span> args<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">:</span> <span class="st0">&quot;&quot;</span><span class="sy0">;</span><br/>            <span class="kw1">if</span> <span class="br0">&#40;</span>a <span class="sy0">==</span> <span class="st0">&quot;&quot;</span><span class="br0">&#41;</span> a <span class="sy0">=</span> <span class="st0">&quot;thisisatest&quot;</span><span class="sy0">;</span>                                                         <span class="coMULTI">/*use this string for a default. */</span><br/>            <span class="kw1">if</span> <span class="br0">&#40;</span>b <span class="sy0">==</span> <span class="st0">&quot;&quot;</span><span class="br0">&#41;</span> b <span class="sy0">=</span> <span class="st0">&quot;testing123testing&quot;</span><span class="sy0">;</span>                                                   <span class="coMULTI">/* &quot;    &quot;     &quot;    &quot;  &quot;    &quot;     */</span><br/>            Console<span class="sy0">.</span><span class="me1">WriteLine</span><span class="br0">&#40;</span><span class="st0">&quot;string A = {0}&quot;</span>, a<span class="br0">&#41;</span><span class="sy0">;</span>                                                 <span class="coMULTI">/*echo string  A  to screen.     */</span><br/>            Console<span class="sy0">.</span><span class="me1">WriteLine</span><span class="br0">&#40;</span><span class="st0">&quot;string B = {0}&quot;</span>, b<span class="br0">&#41;</span><span class="sy0">;</span>                                                 <span class="coMULTI">/*echo string  B  to screen.     */</span><br/>            Console<span class="sy0">.</span><span class="me1">WriteLine</span><span class="br0">&#40;</span><span class="st0">&quot;LCS = {0}&quot;</span>, lcs<span class="br0">&#40;</span>a, b<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>                                              <span class="coMULTI">/*tell Longest Common Substring. */</span><br/>            Console<span class="sy0">.</span><span class="me1">ReadKey</span><span class="br0">&#40;</span><span class="kw1">true</span><span class="br0">&#41;</span><span class="sy0">;</span><br/>        <span class="br0">&#125;</span>                                                                                           <span class="coMULTI">/*stick a fork in it, we're done.*/</span><br/>&#160;<br/>        <span class="coMULTI">/*─────────────────────────────────LCS subroutine─────────────────────────────────*/</span><br/>        <span class="kw1">private</span> <span class="kw1">static</span> <span class="kw4">string</span> lcs<span class="br0">&#40;</span><span class="kw4">string</span> a, <span class="kw4">string</span> b<span class="br0">&#41;</span><br/>        <span class="br0">&#123;</span><br/>           <span class="kw1">if</span><span class="br0">&#40;</span>b<span class="sy0">.</span><span class="me1">Length</span><span class="sy0">&lt;</span>a<span class="sy0">.</span><span class="me1">Length</span><span class="br0">&#41;</span><span class="br0">&#123;</span> <span class="kw4">string</span> t<span class="sy0">=</span>a<span class="sy0">;</span> a<span class="sy0">=</span>b<span class="sy0">;</span> b<span class="sy0">=</span>t<span class="sy0">;</span> <span class="br0">&#125;</span><br/>           <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> n <span class="sy0">=</span> a<span class="sy0">.</span><span class="me1">Length</span><span class="sy0">;</span> n <span class="sy0">&gt;</span> <span class="nu0">0</span><span class="sy0">;</span> n<span class="sy0">--</span><span class="br0">&#41;</span><br/>           <span class="br0">&#123;</span><br/>              <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> m <span class="sy0">=</span> a<span class="sy0">.</span><span class="me1">Length</span><span class="sy0">-</span>n<span class="sy0">;</span> m <span class="sy0">&lt;=</span> a<span class="sy0">.</span><span class="me1">Length</span><span class="sy0">-</span>n<span class="sy0">;</span> m<span class="sy0">++</span><span class="br0">&#41;</span><br/>              <span class="br0">&#123;</span><br/>                  <span class="kw4">string</span> s<span class="sy0">=</span>a<span class="sy0">.</span><span class="me1">Substring</span><span class="br0">&#40;</span>m,n<span class="br0">&#41;</span><span class="sy0">;</span><br/>                  <span class="kw1">if</span><span class="br0">&#40;</span>b<span class="sy0">.</span><span class="me1">Contains</span><span class="br0">&#40;</span>s<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">return</span><span class="br0">&#40;</span>s<span class="br0">&#41;</span><span class="sy0">;</span><br/>              <span class="br0">&#125;</span><br/>           <span class="br0">&#125;</span><br/>           <span class="kw1">return</span> <span class="st0">&quot;&quot;</span><span class="sy0">;</span><br/>        <span class="br0">&#125;</span>    <br/>    <span class="br0">&#125;</span><br/>&#160;</pre>
+<p><b>output</b> when using the default inputs:
+</p>
+<pre>
+   string A = thisisatest
+   string B = testing123testing
+   LCS = test
+</pre>
+<h2><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=9" title="Edit section: Elixir">edit</a>]</span> <span class="mw-headline" id="Elixir"><a href="/wiki/Category:Elixir" title="Category:Elixir">Elixir</a></span></h2>
+<pre class="text highlighted_source">defmodule LCS do<br/>  def longest_common_substring(a,b) do<br/>    alist = to_char_list(a)<br/>    blist = to_char_list(b)<br/>    lengths = (for i &lt;- 0..length(alist)-1, j &lt;- 0..length(blist), do: {{i,j},0})<br/>              |&gt; Enum.into(Map.new)<br/>    {_,_,output} = Enum.reduce(Enum.with_index(alist), {lengths,0,&quot;&quot;}, fn {x,i},acc -&gt;<br/>      Enum.reduce(Enum.with_index(blist), acc, fn {y,j},{map,gleng,output} -&gt;<br/>        if x==y do<br/>          len = if i==0 or j==0, do: 1, else: map[{i-1,j-1}]+1<br/>          map = Dict.put(map, {i,j}, len)<br/>          if len &gt; gleng do<br/>            {map, len, String.slice(a, i - len + 1, len)}<br/>          else<br/>            {map, gleng, output}<br/>          end<br/>        else<br/>          {map, gleng, output}<br/>        end<br/>      end)<br/>    end)<br/>    output<br/>  end<br/>end<br/>&#160;<br/>IO.puts LCS.longest_common_substring(&quot;thisisatest&quot;, &quot;testing123testing&quot;)</pre>
+<div>
+<dl><dt>Output:</div>
+</dt></dl>
+<pre>
+test
+</pre>
+<h2><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=10" title="Edit section: Go">edit</a>]</span> <span class="mw-headline" id="Go"><a href="/wiki/Category:Go" title="Category:Go">Go</a></span></h2>
+<div class="examplemeta translation"><b>Translation of</b>: <a href="/wiki/Longest_Common_Substring#C.23" title="Longest Common Substring">C#</a></div>
+<pre class="go highlighted_source"><span class="kw1">package</span> main<br/>&#160;<br/><span class="kw1">import</span> <span class="st0">&quot;fmt&quot;</span><br/>&#160;<br/><span class="kw4">func</span> lcs<span class="sy1">(</span>a<span class="sy1">,</span> b <span class="kw4">string</span><span class="sy1">)</span> <span class="sy1">(</span>output <span class="kw4">string</span><span class="sy1">)</span> <span class="sy1">{</span><br/>    lengths <span class="sy2">:=</span> <span class="kw3">make</span><span class="sy1">([]</span><span class="kw4">int</span><span class="sy1">,</span> <span class="kw3">len</span><span class="sy1">(</span>a<span class="sy1">)</span><span class="sy3">*</span><span class="kw3">len</span><span class="sy1">(</span>b<span class="sy1">))</span><br/>    greatestLength <span class="sy2">:=</span> <span class="nu0">0</span><br/>    <span class="kw1">for</span> <span class="nu2">i</span><span class="sy1">,</span> x <span class="sy2">:=</span> <span class="kw1">range</span> a <span class="sy1">{</span><br/>        <span class="kw1">for</span> j<span class="sy1">,</span> y <span class="sy2">:=</span> <span class="kw1">range</span> b <span class="sy1">{</span><br/>            <span class="kw1">if</span> x <span class="sy3">==</span> y <span class="sy1">{</span><br/>                <span class="kw1">if</span> <span class="nu2">i</span> <span class="sy3">==</span> <span class="nu0">0</span> <span class="sy3">||</span> j <span class="sy3">==</span> <span class="nu0">0</span> <span class="sy1">{</span><br/>                    lengths<span class="sy1">[</span><span class="nu2">i</span><span class="sy3">*</span><span class="kw3">len</span><span class="sy1">(</span>b<span class="sy1">)</span><span class="sy3">+</span>j<span class="sy1">]</span> <span class="sy2">=</span> <span class="nu0">1</span><br/>                <span class="sy1">}</span> <span class="kw1">else</span> <span class="sy1">{</span><br/>                    lengths<span class="sy1">[</span><span class="nu2">i</span><span class="sy3">*</span><span class="kw3">len</span><span class="sy1">(</span>b<span class="sy1">)</span><span class="sy3">+</span>j<span class="sy1">]</span> <span class="sy2">=</span> lengths<span class="sy1">[(</span><span class="nu2">i</span><span class="sy3">-</span><span class="nu0">1</span><span class="sy1">)</span><span class="sy3">*</span><span class="kw3">len</span><span class="sy1">(</span>b<span class="sy1">)</span><span class="sy3">+</span>j<span class="sy3">-</span><span class="nu0">1</span><span class="sy1">]</span> <span class="sy3">+</span> <span class="nu0">1</span><br/>                <span class="sy1">}</span><br/>                <span class="kw1">if</span> lengths<span class="sy1">[</span><span class="nu2">i</span><span class="sy3">*</span><span class="kw3">len</span><span class="sy1">(</span>b<span class="sy1">)</span><span class="sy3">+</span>j<span class="sy1">]</span> &gt; greatestLength <span class="sy1">{</span><br/>                    greatestLength <span class="sy2">=</span> lengths<span class="sy1">[</span><span class="nu2">i</span><span class="sy3">*</span><span class="kw3">len</span><span class="sy1">(</span>b<span class="sy1">)</span><span class="sy3">+</span>j<span class="sy1">]</span><br/>                    output <span class="sy2">=</span> a<span class="sy1">[</span><span class="nu2">i</span><span class="sy3">-</span>greatestLength<span class="sy3">+</span><span class="nu0">1</span> <span class="sy1">:</span> <span class="nu2">i</span><span class="sy3">+</span><span class="nu0">1</span><span class="sy1">]</span><br/>                <span class="sy1">}</span><br/>            <span class="sy1">}</span><br/>        <span class="sy1">}</span><br/>    <span class="sy1">}</span><br/>    <span class="kw1">return</span><br/><span class="sy1">}</span><br/>&#160;<br/><span class="kw4">func</span> main<span class="sy1">()</span> <span class="sy1">{</span><br/>    fmt<span class="sy3">.</span>Println<span class="sy1">(</span>lcs<span class="sy1">(</span><span class="st0">&quot;thisisatest&quot;</span><span class="sy1">,</span> <span class="st0">&quot;testing123testing&quot;</span><span class="sy1">))</span><br/><span class="sy1">}</span></pre>
+<div>
+<dl><dt>Output:</div>
+</dt></dl>
+<pre>
+test
+</pre>
+<h2><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=11" title="Edit section: Haskell">edit</a>]</span> <span class="mw-headline" id="Haskell"><a href="/wiki/Category:Haskell" title="Category:Haskell">Haskell</a></span></h2>
+<pre class="haskell highlighted_source"><span class="kw1">module</span> Longest<br/>   <span class="kw1">where</span><br/><span class="kw1">import</span> Data<span class="sy0">.</span>List <span class="br0">&#40;</span> maximumBy <span class="sy0">,</span> intersect <span class="br0">&#41;</span><br/>&#160;<br/>substrings <span class="sy0">::</span> <a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t:String"><span class="kw4">String</span></a> <span class="sy0">-&gt;</span> <span class="br0">&#91;</span><a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t:String"><span class="kw4">String</span></a><span class="br0">&#93;</span><br/>substrings thestring <span class="sy0">=</span> <span class="br0">&#91;</span><a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:take"><span class="kw3">take</span></a> howmany <span class="sy0">$</span> <a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:drop"><span class="kw3">drop</span></a> start thestring <span class="sy0">|</span> start <span class="sy0">&lt;-</span> <span class="br0">&#91;</span><span class="nu0">0</span><span class="sy0">..</span><a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:length"><span class="kw3">length</span></a> thestring <span class="sy0">-</span> <span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">,</span><br/>	  howmany <span class="sy0">&lt;-</span> <span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">..</span><a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:length"><span class="kw3">length</span></a> thestring <span class="sy0">-</span> start<span class="br0">&#93;</span><span class="br0">&#93;</span><br/>&#160;<br/>longestCommon <span class="sy0">::</span> <a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t:String"><span class="kw4">String</span></a> <span class="sy0">-&gt;</span> <a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t:String"><span class="kw4">String</span></a> <span class="sy0">-&gt;</span> <a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t:String"><span class="kw4">String</span></a><br/>longestCommon first second <span class="sy0">=</span> maximumBy mycompare <span class="sy0">$</span> intersect <span class="br0">&#40;</span> substrings first <span class="br0">&#41;</span> <span class="br0">&#40;</span> substrings second <span class="br0">&#41;</span><br/>   <span class="kw1">where</span><br/>      mycompare <span class="sy0">::</span> <a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t:String"><span class="kw4">String</span></a> <span class="sy0">-&gt;</span> <a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t:String"><span class="kw4">String</span></a> <span class="sy0">-&gt;</span> <a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t:Ordering"><span class="kw4">Ordering</span></a><br/>      mycompare m n <span class="sy0">=</span> <a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:compare"><span class="kw3">compare</span></a> <span class="br0">&#40;</span> <a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:length"><span class="kw3">length</span></a> m <span class="br0">&#41;</span> <span class="br0">&#40;</span> <a href="http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:length"><span class="kw3">length</span></a> n <span class="br0">&#41;</span></pre>
+<div>
+<dl><dt>Output:</div>
+</dt></dl>
+<pre>
+longestCommon &quot;testing123testing&quot; &quot;thisisatest&quot;
+&quot;test&quot;
+</pre>
+<h2><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=12" title="Edit section: J">edit</a>]</span> <span class="mw-headline" id="J"><a href="/wiki/Category:J" title="Category:J">J</a></span></h2>
+<p>This algorithm starts by comparing each character in the one string to each character in the other, and then iterates on this result until it finds the length of the longest common substring. So if Lx is the length of one argument string, Ly is the length of the other argument string, and Lr is the length of the result string, this algorithm uses space on the order of Lx*Ly and time on the order of Lx*Ly*Lr.
+</p><p>In other words: this can be suitable for small problems, but you might want something better if you're comparing gigabyte length strings with high commonality.
+</p>
+<pre class="j highlighted_source">lcstr=:<span class="nu0">4</span>&#160;:<span class="nu0">0</span><br/>  C=. <span class="sy0">(</span>{.~ <span class="nu0">1</span>+$<span class="sy0">)</span> <span class="kw2">x</span>=/<span class="kw2">y</span><br/>  M=. &gt;./ <span class="sy0">(</span>* * * &gt;. * + <span class="sy0">(</span><span class="nu0">_1</span>&amp;|.<span class="sy0">)</span>@:|:^:<span class="nu0">2</span><span class="sy0">)</span>^:<span class="nu0">_</span>  C<br/>  N=. &gt;./ M<br/>  <span class="kw2">y</span> {~ <span class="sy0">(</span>M i. N<span class="sy0">)</span>-i.-N<br/><span class="sy0">)</span></pre>
+<p>Intermedate results:
+</p>
+<pre>   C shows which characters are in common between the two strings.
+   M marks the length of the longest common substring ending at each position in the right argument
+   N is the length of the longest common substring
+</pre>
+<p>Example use:
+</p>
+<pre class="j highlighted_source">   <span class="st_h">'thisisatest'</span> lcs <span class="st_h">'testing123testing'</span><br/>test</pre>
+<h2><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=13" title="Edit section: jq">edit</a>]</span> <span class="mw-headline" id="jq"><a href="/wiki/Category:Jq" title="Category:Jq">jq</a></span></h2>
+<div class="examplemeta translation"><b>Translation of</b>: <a href="/wiki/Longest_Common_Substring#C.23.2C_Go.2C_Ruby" title="Longest Common Substring">C#, Go, Ruby</a></div>
+<div class="examplemeta workswith"><b>Works with</b>: <a href="/wiki/Jq" title="Jq" class="mw-redirect">jq</a> version 1.4</div>
+<p><b>Utility functions</b>:
+</p>
+<pre class="text highlighted_source"># Create an m x n matrix<br/>def matrix(m; n; init):<br/>  if m == 0 then []<br/>  elif m == 1 then [range(0;n) | init]<br/>  elif m &gt; 0 then<br/>    matrix(1;n;init) as $row<br/>    | [range(0;m) | $row ]<br/>  else error(&quot;matrix\(m);_;_) invalid&quot;)<br/>  end;<br/>&#160;<br/>def set(i;j; value):<br/>  setpath([i,j]; value);</pre>
+<p><b>Longest Common Substring</b>:
+</p>
+<pre class="text highlighted_source">def lcs(a; b):<br/>  matrix(a|length; b|length; 0) as $lengths<br/>  # state: [ $lengths, greatestLength, answer ]<br/>  | [$lengths, 0]<br/>  | reduce range(0; a|length) as $i <br/>      (.;<br/>       reduce range(0; b|length) as $j <br/>         (.;<br/>           if a[$i:$i+1] == b[$j:$j+1] then<br/>            (if $i == 0 or $j == 0 then 1<br/>             else .[0][$i-1][$j-1] + 1<br/> 	     end) as $x<br/>            | .[0] |= set($i; $j; $x)<br/>            | if $x &gt; .[1] then<br/>                .[1] = $x<br/>                | .[2] = a[1+$i - $x&#160;: 1+$i] # output<br/>              else .<br/>              end<br/>          else .<br/>          end )) | .[2];</pre>
+<p><b>Example</b>:
+</p>
+<pre class="text highlighted_source">lcs(&quot;thisisatest&quot;; &quot;testing123testing&quot;)</pre>
+<div>
+<dl><dt>Output:</div>
+</dt></dl>
+<pre class="text highlighted_source">$ jq -n -f Longest_common_substring.jq<br/>&quot;test&quot;</pre>
+<h2><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=14" title="Edit section: Mathematica">edit</a>]</span> <span class="mw-headline" id="Mathematica"><a href="/wiki/Category:Mathematica" title="Category:Mathematica">Mathematica</a></span></h2>
+<p>The function <code>LongestCommonSubsequence</code> returns the longest common substring, and <code>LongestCommonSequence</code> returns the longest common subsequence.
+</p>
+<pre class="text highlighted_source">Print[LongestCommonSubsequence[&quot;thisisatest&quot;, &quot;testing123testing&quot;]];</pre>
+<div>
+<dl><dt>Output:</div>
+</dt></dl>
+<pre>test</pre>
+<h2><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=15" title="Edit section: Racket">edit</a>]</span> <span class="mw-headline" id="Racket"><a href="/wiki/Category:Racket" title="Category:Racket">Racket</a></span></h2>
+<p>A chance to show off how to use <code>HashTable</code> types in <i>typed/racket</i>
+</p>
+<pre class="text highlighted_source">#lang typed/racket<br/>(: lcs (String String -&gt; String))<br/>(define (lcs a b)<br/>  (: all-substrings# (String -&gt; (HashTable String Boolean)))<br/>  (define (all-substrings# str)<br/>    (define l (string-length str))<br/>    (for*/hash&#160;: (HashTable String Boolean)<br/>      ((s (in-range 0 l)) (e (in-range (add1 s) (add1 l))))<br/>      (values (substring str s e) #t)))<br/>&#160;<br/>  (define a# (all-substrings# a))<br/>&#160;<br/>  (define b# (all-substrings# b))<br/>&#160;<br/>  (define-values (s l)<br/>    (for/fold&#160;: (Values String Nonnegative-Integer)<br/>    ((s &quot;&quot;) (l&#160;: Nonnegative-Integer 0))<br/>    ((a_ (in-hash-keys a#))<br/>     #:when (and (&gt; (string-length a_) l) (hash-ref b# a_ #f)))<br/>    (values a_ (string-length a_))))<br/>&#160;<br/>  s)<br/>&#160;<br/>(module+ test<br/>  (&quot;thisisatest&quot; . lcs . &quot;testing123testing&quot;))</pre>
+<div>
+<dl><dt>Output:</div>
+</dt></dl>
+<pre>&quot;test&quot;</pre>
+<h2><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=16" title="Edit section: REXX">edit</a>]</span> <span class="mw-headline" id="REXX"><a href="/wiki/Category:REXX" title="Category:REXX">REXX</a></span></h2>
+<pre class="rexx highlighted_source"><span class="coMULTI">/*REXX program determines the  LCSUBSTR (Longest Common Substring) subroutine.*/</span><br/><span class="kw1">parse</span> <span class="kw1">arg</span> a b <span class="sy0">.</span>                        <span class="coMULTI">/*obtain optional arguments from the CL*/</span><br/><span class="kw1">if</span> a==<span class="st0">''</span>  <span class="kw3">then</span> a= <span class="st0">&quot;thisisatest&quot;</span>        <span class="coMULTI">/*Not specified?  Then use the default.*/</span><br/><span class="kw1">if</span> b==<span class="st0">''</span>  <span class="kw3">then</span> b= <span class="st0">&quot;testing123testing&quot;</span>  <span class="coMULTI">/* &quot;      &quot;         &quot;   &quot;     &quot;    &quot;   */</span><br/><span class="kw1">say</span> <span class="st0">'   string A ='</span> a                  <span class="coMULTI">/*echo string A to the terminal screen.*/</span><br/><span class="kw1">say</span> <span class="st0">'   string B ='</span> b                  <span class="coMULTI">/*  &quot;     &quot;   B  &quot;  &quot;      &quot;       &quot;   */</span><br/><span class="kw1">say</span> <span class="st0">'   LCsubstr ='</span> LCsubstr<span class="br0">&#40;</span>a,b<span class="br0">&#41;</span>      <span class="coMULTI">/*display the Longest Common Substring.*/</span><br/><span class="kw1">exit</span>                                   <span class="coMULTI">/*stick a fork in it,  we're all done. */</span><br/><span class="coMULTI">/*────────────────────────────────────────────────────────────────────────────*/</span><br/>LCsubstr: <span class="kw1">procedure</span>;  <span class="kw1">parse</span> <span class="kw1">arg</span> x,y,,$ <span class="coMULTI">/*LCsubstr:  Longest Common Substring. */</span><br/>L=<span class="kw6">length</span><span class="br0">&#40;</span>x<span class="br0">&#41;</span>                            <span class="coMULTI">/*a placeholder for string length of  X*/</span><br/>            <span class="kw1">do</span>   j=<span class="nu0">1</span>         <span class="kw2">for</span> L     <span class="coMULTI">/*step through start points in string X*/</span><br/>              <span class="kw1">do</span> k=L  <span class="kw2">by</span> -<span class="nu0">1</span>  <span class="kw2">for</span> L     <span class="coMULTI">/*step through string lengths.         */</span><br/>              _=<span class="kw6">strip</span><span class="br0">&#40;</span><span class="kw6">substr</span><span class="br0">&#40;</span>x,j,k<span class="br0">&#41;</span><span class="br0">&#41;</span>   <span class="coMULTI">/*extract a common substring.          */</span><br/>              <span class="kw1">if</span> <span class="kw6">pos</span><span class="br0">&#40;</span>_,y<span class="br0">&#41;</span><span class="sy0">\</span>==<span class="nu0">0</span> <span class="sy0">&amp;</span> <span class="kw6">length</span><span class="br0">&#40;</span>_<span class="br0">&#41;</span><span class="sy0">&gt;</span><span class="kw6">length</span><span class="br0">&#40;</span>$<span class="br0">&#41;</span>  <span class="kw3">then</span> $=_      <span class="coMULTI">/*longest? */</span><br/>              <span class="kw3">end</span>   <span class="coMULTI">/*k*/</span>              <span class="coMULTI">/* [↑]  see if this string is longer.  */</span><br/>            <span class="kw3">end</span>     <span class="coMULTI">/*j*/</span><br/><span class="kw1">return</span> $                               <span class="coMULTI">/*$:  (null if there isn't common str.)*/</span></pre>
+<p><b>output</b> when using the default inputs:
+</p>
+<pre>
+   string A = thisisatest
+   string B = testing123testing
+   LCsubstr = test
+</pre>
+<h2><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=17" title="Edit section: Ruby">edit</a>]</span> <span class="mw-headline" id="Ruby"><a href="/wiki/Category:Ruby" title="Category:Ruby">Ruby</a></span></h2>
+<div class="examplemeta translation"><b>Translation of</b>: <a href="/wiki/Longest_Common_Substring#C.23" title="Longest Common Substring">C#</a></div>
+<pre class="ruby highlighted_source"><span class="kw1">def</span> longest_common_substring<span class="br0">&#40;</span>a,b<span class="br0">&#41;</span><br/>  lengths = <span class="kw3">Array</span>.<span class="me1">new</span><span class="br0">&#40;</span>a.<span class="me1">length</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="kw3">Array</span>.<span class="me1">new</span><span class="br0">&#40;</span>b.<span class="me1">length</span>, <span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#125;</span><br/>  greatestLength = <span class="nu0">0</span><br/>  output = <span class="st0">&quot;&quot;</span><br/>  a.<span class="me1">each_char</span>.<span class="me1">with_index</span> <span class="kw1">do</span> <span class="sy0">|</span>x,i<span class="sy0">|</span><br/>    b.<span class="me1">each_char</span>.<span class="me1">with_index</span> <span class="kw1">do</span> <span class="sy0">|</span>y,j<span class="sy0">|</span><br/>      <span class="kw1">next</span> <span class="kw1">if</span> x&#160;!= y<br/>      lengths<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span> = <span class="br0">&#40;</span>i.<span class="me1">zero</span>? <span class="sy0">||</span> j.<span class="me1">zero</span>?<span class="br0">&#41;</span>&#160;? <span class="nu0">1</span>&#160;: lengths<span class="br0">&#91;</span>i<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">+</span> <span class="nu0">1</span><br/>      <span class="kw1">if</span> lengths<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy0">&gt;</span> greatestLength<br/>        greatestLength = lengths<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><br/>        output = a<span class="br0">&#91;</span>i <span class="sy0">-</span> greatestLength <span class="sy0">+</span> <span class="nu0">1</span>, greatestLength<span class="br0">&#93;</span><br/>      <span class="kw1">end</span><br/>    <span class="kw1">end</span><br/>  <span class="kw1">end</span><br/>  output<br/><span class="kw1">end</span><br/>&#160;<br/><span class="kw3">p</span> longest_common_substring<span class="br0">&#40;</span><span class="st0">&quot;thisisatest&quot;</span>, <span class="st0">&quot;testing123testing&quot;</span><span class="br0">&#41;</span></pre>
+<div>
+<dl><dt>Output:</div>
+</dt></dl>
+<pre>
+&quot;test&quot;
+</pre>
+<h2><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=18" title="Edit section: Swift">edit</a>]</span> <span class="mw-headline" id="Swift"><a href="/wiki/Category:Swift" title="Category:Swift">Swift</a></span></h2>
+<pre class="text highlighted_source">func lComSubStr&lt;<br/>  S0: Sliceable, S1: Sliceable, T: Equatable where<br/>  S0.Generator.Element == T, S1.Generator.Element == T,<br/>  S0.Index.Distance == Int, S1.Index.Distance == Int<br/>  &gt;(w1: S0, _ w2: S1) -&gt; S0.SubSlice {<br/>&#160;<br/>    var (len, end) = (0, 0)<br/>&#160;<br/>    let empty = Array(Repeat(count: w2.count + 1, repeatedValue: 0))<br/>    var mat: [[Int]] = Array(Repeat(count: w1.count + 1, repeatedValue: empty))<br/>&#160;<br/>    for (i, sLett) in w1.enumerate() {<br/>      for (j, tLett) in w2.enumerate() where tLett == sLett {<br/>        let curLen = mat[i][j] + 1<br/>        mat[i + 1][j + 1] = curLen<br/>        if curLen &gt; len {<br/>          len = curLen<br/>          end = i<br/>        }<br/>      }<br/>    }<br/>    return w1[advance(w1.startIndex, (end + 1) - len)...advance(w1.startIndex, end)]<br/>}<br/>&#160;<br/>func lComSubStr(w1: String, _ w2: String) -&gt; String {<br/>  return String(lComSubStr(w1.characters, w2.characters))<br/>}</pre>
+<p>Output:
+</p>
+<pre class="text highlighted_source">lComSubStr(&quot;thisisatest&quot;, &quot;testing123testing&quot;) // &quot;test&quot;</pre>
+<h2><span class="editsection">[<a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit&amp;section=19" title="Edit section: zkl">edit</a>]</span> <span class="mw-headline" id="zkl"><a href="/wiki/Category:Zkl" title="Category:Zkl">zkl</a></span></h2>
+<pre class="text highlighted_source">fcn lcd(a,b){<br/>   if(b.len()&lt;a.len()){ t:=a; a=b; b=t; }<br/>   foreach n,m in ([a.len()..1,-1],a.len()-n+1){<br/>      s:=a[m,n];<br/>      if(b.holds(s)) return(s);<br/>   }<br/>   &quot;&quot;<br/>}</pre>
+<pre class="text highlighted_source">lcd(&quot;testing123testing&quot;,&quot;thisisatest&quot;).println();</pre>
+<div>
+<dl><dt>Output:</div><pre>test</pre>
+</dt></dl>
+ 
+ 
+</div>  
+ 
+<div class="printfooter">
+Retrieved from "<a href="http://rosettacode.org/mw/index.php?title=Longest_Common_Substring&amp;oldid=216988">http://rosettacode.org/mw/index.php?title=Longest_Common_Substring&amp;oldid=216988</a>" </div>
+ 
+ 
+<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="/wiki/Category:Draft_Programming_Tasks" title="Category:Draft Programming Tasks">Draft Programming Tasks</a></li><li><a href="/wiki/Category:AutoHotkey" title="Category:AutoHotkey">AutoHotkey</a></li><li><a href="/wiki/Category:C%2B%2B" title="Category:C++">C++</a></li><li><a href="/wiki/Category:C_sharp" title="Category:C sharp">C sharp</a></li><li><a href="/wiki/Category:Elixir" title="Category:Elixir">Elixir</a></li><li><a href="/wiki/Category:Go" title="Category:Go">Go</a></li><li><a href="/wiki/Category:Haskell" title="Category:Haskell">Haskell</a></li><li><a href="/wiki/Category:J" title="Category:J">J</a></li><li><a href="/wiki/Category:Jq" title="Category:Jq">Jq</a></li><li><a href="/wiki/Category:Mathematica" title="Category:Mathematica">Mathematica</a></li><li><a href="/wiki/Category:Racket" title="Category:Racket">Racket</a></li><li><a href="/wiki/Category:REXX" title="Category:REXX">REXX</a></li><li><a href="/wiki/Category:Ruby" title="Category:Ruby">Ruby</a></li><li><a href="/wiki/Category:Swift" title="Category:Swift">Swift</a></li><li><a href="/wiki/Category:Zkl" title="Category:Zkl">Zkl</a></li></ul></div></div>  
+<div class="visualClear"></div>
+ 
+ 
+</div>
+ 
+</div>
+ 
+ 
+<div id="mw-head" class="noprint">
+ 
+<div id="p-personal" class="">
+<h5>Personal tools</h5>
+<ul>
+<li id="pt-createaccount"><a href="/mw/index.php?title=Special:UserLogin&amp;returnto=Longest+Common+Substring&amp;type=signup">Create account</a></li>
+<li id="pt-login"><a href="/mw/index.php?title=Special:UserLogin&amp;returnto=Longest+Common+Substring" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+</ul>
+</div>
+ 
+<div id="left-navigation">
+ 
+<div id="p-namespaces" class="vectorTabs">
+<h5>Namespaces</h5>
+<ul>
+<li id="ca-nstab-main" class="selected"><span><a href="/wiki/Longest_Common_Substring" title="View the content page [c]" accesskey="c">Page</a></span></li>
+<li id="ca-talk"><span><a href="/wiki/Talk:Longest_Common_Substring" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+</ul>
+</div>
+ 
+ 
+<div id="p-variants" class="vectorMenu emptyPortlet">
+<h4>
+</h4>
+<h5><span>Variants</span><a href="#"></a></h5>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+ 
+</div>
+<div id="right-navigation">
+ 
+<div id="p-views" class="vectorTabs">
+<h5>Views</h5>
+<ul>
+<li id="ca-view" class="selected"><span><a href="/wiki/Longest_Common_Substring">Read</a></span></li>
+<li id="ca-edit"><span><a href="/mw/index.php?title=Longest_Common_Substring&amp;action=edit" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+<li id="ca-history" class="collapsible"><span><a href="/mw/index.php?title=Longest_Common_Substring&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+</ul>
+</div>
+ 
+ 
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+<h5><span>Actions</span><a href="#"></a></h5>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+ 
+ 
+<div id="p-search">
+<h5><label for="searchInput">Search</label></h5>
+<form action="/mw/index.php" id="searchform">
+<div>
+<input type="search" name="search" title="Search Rosetta Code [f]" accesskey="f" id="searchInput"/> <input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton"/> <input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton"/> <input type='hidden' name="title" value="Special:Search"/>
+</div>
+</form>
+</div>
+ 
+</div>
+</div>
+ 
+ 
+<div id="mw-panel" class="noprint">
+ 
+<div id="p-logo"><a style="background-image: url(/mw/title.png);" href="/wiki/Rosetta_Code" title="Visit the main page"></a></div>
+ 
+ 
+<div class="portal" id='p-Community'>
+<h5>Community</h5>
+<div class="body">
+<ul>
+<li id="n-Twitter"><a href="http://twitter.com/rosettacode" rel="nofollow">Twitter</a></li>
+<li id="n-Chat.2FIRC"><a href="/wiki/Special:WebChat">Chat/IRC</a></li>
+<li id="n-Planet"><a href="http://rosettacode.org/planet" rel="nofollow">Planet</a></li>
+<li id="n-The-Village-Pump"><a href="/wiki/Rosetta_Code:Village_Pump">The Village Pump</a></li>
+<li id="n-Finances"><a href="/wiki/Rosetta_Code:Finances">Finances</a></li>
+</ul>
+</div>
+</div>
+ 
+ 
+<div class="portal" id='p-Explore'>
+<h5>Explore</h5>
+<div class="body">
+<ul>
+<li id="n-Languages"><a href="/wiki/Category:Programming_Languages">Languages</a></li>
+<li id="n-Tasks"><a href="/wiki/Category:Programming_Tasks">Tasks</a></li>
+<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+<li id="n-Similar-sites"><a href="/wiki/Help:Similar_Sites">Similar sites</a></li>
+<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+</ul>
+</div>
+</div>
+ 
+ 
+<div class="portal" id='p-Misc'>
+<h5>Misc</h5>
+<div class="body">
+ 
+<g:plusone></g:plusone>
+ 
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-size="large" data-hashtags="rosettacode">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<script src="http://www.stumbleupon.com/hostedbadge.php?s=2"></script> </div>
+</div>
+ 
+ 
+ 
+ 
+<div class="portal" id='p-tb'>
+<h5>Toolbox</h5>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Longest_Common_Substring" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Longest_Common_Substring" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+<li id="t-print"><a href="/mw/index.php?title=Longest_Common_Substring&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+<li id="t-permalink"><a href="/mw/index.php?title=Longest_Common_Substring&amp;oldid=216988" title="Permanent link to this revision of the page">Permanent link</a></li>
+<li id="t-smwbrowselink"><a href="/wiki/Special:Browse/Longest_Common_Substring" title="Special:Browse/Longest Common Substring">Browse properties</a></li> </ul>
+</div>
+</div>
+ 
+ 
+ 
+</div>
+ 
+ 
+<div id="footer">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last modified on 28 November 2015, at 00:40.</li>
+<li id="footer-info-copyright">Content is available under <a class="external" href="http://www.gnu.org/licenses/fdl-1.2.html">GNU Free Documentation License 1.2</a>.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="/wiki/Rosetta_Code:Privacy_policy" title="Rosetta Code:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="/wiki/Rosetta_Code:About" title="Rosetta Code:About">About Rosetta Code</a></li>
+<li id="footer-places-disclaimer"><a href="/wiki/Rosetta_Code:General_disclaimer" title="Rosetta Code:General disclaimer">Disclaimers</a></li>
+</ul>
+<ul id="footer-icons" class="noprint">
+<li id="footer-copyrightico">
+<a href="http://www.gnu.org/licenses/fdl-1.2.html"><img src="/mw/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31"/></a>
+</li>
+<li id="footer-poweredbyico">
+<a href="//www.mediawiki.org/"><img src="/mw/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"/></a>
+<a href="http://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki"><img src="/mw/extensions/SemanticMediaWiki/skins/images/smw_button.png" alt="Powered by Semantic MediaWiki" width="88" height="31"/></a>
+</li>
+</ul>
+<div style="clear:both"></div>
+</div>
+ 
+<script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script src="http://rosettacode.org/mw/load.php?debug=false&amp;lang=en&amp;modules=skins.vector&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest"], null, true);
+}</script>
+<script type="text/javascript">/* CloudFlare analytics upgrade */
+</script>
+<script src="http://rosettacode.org/mw/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+ 
+</body>
+</html>
