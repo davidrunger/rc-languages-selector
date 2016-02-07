@@ -62,7 +62,8 @@ From the root directory of the project, launch the test server with
 ruby spec/test_server.rb
 ```
 
-In a separate tab, run the tests with
+After you have run `$ bundle install` and installed a modern version of
+phantomjs, run the tests in a separate tab with
 
 ```sh
 rspec
