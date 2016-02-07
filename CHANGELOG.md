@@ -1,3 +1,9 @@
+## v0.1.10 (2016-02-06)
+
+#### Minor changes
+
+* bug fixes (prefix all CSS selectors)
+
 ## v0.1.9 (2015-12-18)
 
 #### Minor changes
