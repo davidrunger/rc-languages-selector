@@ -130,11 +130,11 @@ LanguageSelector.prototype.bindHandlers = function () {
   var self = this;
 
   // shows/hides the form
-  $('#rc-languages-selector #toggle-form').click(function (event) {
+  $('#rc-languages-selector #rcls-toggle-form').click(function (event) {
     event.preventDefault();
     self.showingForm = !self.showingForm;
-    var hideFormHtml = '<span class="arrow-icon-up">⌃</span><span class="text-hide">Hide Form</span>'
-    var showFormHtml = '<span class="arrow-icon-down">⌵</span><span class="text-show">Select Languages</span>'
+    var hideFormHtml = '<span class="rcls-arrow-icon-up">⌃</span><span class="rcls-text-hide">Hide Form</span>'
+    var showFormHtml = '<span class="rcls-arrow-icon-down">⌵</span><span class="rcls-text-show">Select Languages</span>'
     $(event.currentTarget).html(self.showingForm ? hideFormHtml : showFormHtml);
     $('#rc-languages-selector form').toggleClass('rcls-hidden');
   });
@@ -142,14 +142,14 @@ LanguageSelector.prototype.bindHandlers = function () {
   $('#rc-languages-selector #pause').click(function (event) {
     event.preventDefault();
     self.paused = !self.paused;
-    var resumeHtml = '<span class="text-hide">Resume Filtering</span>'
-    var pauseHtml = '<span class="text-hide">Pause Filtering</span>'
+    var resumeHtml = '<span class="rcls-text-hide">Resume Filtering</span>'
+    var pauseHtml = '<span class="rcls-text-hide">Pause Filtering</span>'
     $(event.currentTarget).html(self.paused ? resumeHtml : pauseHtml);
     self.paused ? self.pause() : self.unpause();
   });
 
   // clears the filter input (and focuses it for user convenience)
-  $('#rc-languages-selector #clear-filter').click(function (event) {
+  $('#rc-languages-selector #rcls-clear-filter').click(function (event) {
     event.preventDefault();
     // trigger 'input' event to trigger re-rendering of checkboxes list with
     // all languages
