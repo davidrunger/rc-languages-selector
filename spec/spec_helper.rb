@@ -1,7 +1,7 @@
 require 'capybara'
-require 'capybara/poltergeist'
 require 'capybara/rspec'
 require 'json'
+require 'selenium-webdriver'
 
 RSpec.configure do |config|
   config.filter_run focus: true
@@ -11,15 +11,18 @@ end
 
 Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |f| require f }
 
-Capybara.register_driver :poltergeist do |app|
-  options = {
-    phantomjs_options: ['--load-images=no', '--disk-cache=yes']
-  }
-  Capybara::Poltergeist::Driver.new(app, options)
+Capybara.register_driver :chrome do |app|
+  Capybara::Selenium::Driver.new(
+    app,
+    browser: :chrome,
+    options: Selenium::WebDriver::Chrome::Options.new(
+      args: %w[headless disable-gpu no-sandbox window-size=1280,1024]
+    )
+  )
 end
 
-Capybara.default_driver = :poltergeist
-Capybara.javascript_driver = :poltergeist
+Capybara.default_driver = :chrome
+Capybara.javascript_driver = :chrome
 Capybara.save_and_open_page_path = 'tmp'
 
 # As Chrome would do for us when the extension is installed, we want to
