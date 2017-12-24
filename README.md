@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/davidrunger/rc-languages-selector.svg?branch=master)](https://travis-ci.org/davidrunger/rc-languages-selector)
+
 # Rosetta Code Languages Selector
 
 [rosettacode.org][rosettacode] is a great website for comparing
