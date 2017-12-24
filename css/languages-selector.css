@@ -97,7 +97,7 @@ button#rcls-toggle-form .rcls-text-hide {
 
 .rcls-checkbox {
   position: absolute;
-  opacity: 0;
+  opacity: 0.01; /* HACK: undetectable to the human eye, but detectable for tests */
 }
 
 .rcls-checkbox, .rcls-checkbox-label {
