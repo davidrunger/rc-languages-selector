@@ -24,16 +24,6 @@ class TestServer < Sinatra::Base
     path = TestServer.absolute_path("../../html/#{filename}")
     File.read(path)
   end
-
-  # Our test server stores a local version of a programming task page
-  # (which should be more performant and put less unnecessary load on
-  # rosettacode.org). However, this means that relative URLs will then
-  # request resources from our server that it doesn't have, so for all
-  # other requests we will forward them along to rosettacode.org.
-  get '*' do
-    path = request.fullpath
-    redirect to('http://rosettacode.org' + path)
-  end
 end
 
 TestServer.run!
