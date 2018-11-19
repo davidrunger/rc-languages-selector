@@ -20,7 +20,7 @@ end
 
 Capybara.default_driver = :poltergeist
 Capybara.javascript_driver = :poltergeist
-Capybara.save_and_open_page_path = 'tmp'
+Capybara.save_path = 'tmp'
 
 # As Chrome would do for us when the extension is installed, we want to
 # inject our JavaScript into each page we visit with PhantomJS. We'll
