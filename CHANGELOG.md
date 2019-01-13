@@ -1,3 +1,9 @@
+## v0.1.11 (2019-01-13)
+
+#### Minor changes
+
+* update URL matches so extension runs on www.rosettacode.org
+
 ## v0.1.10 (2016-02-06)
 
 #### Minor changes
