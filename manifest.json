@@ -15,8 +15,7 @@
   "content_scripts": [
     {
       "matches": [
-        "http://rosettacode.org/*",
-        "https://rosettacode.org/*"
+        "*://*.rosettacode.org/wiki/*"
       ],
       "css": ["css/languages-selector.css"],
       "js": [
