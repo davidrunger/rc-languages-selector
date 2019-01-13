@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# clear old release files
+rm -rf tmp/release/
+rm -f tmp/release.zip
+
+# copy CSS
+mkdir -p tmp/release/css
+cp -r css/* tmp/release/css
+
+# copy HTML
+mkdir -p tmp/release/html
+cp -r html/* tmp/release/html
+
+# copy images
+mkdir -p tmp/release/images
+cp -r images/* tmp/release/images
+
+# copy JavaScript
+mkdir -p tmp/release/js
+cp -r js/* tmp/release/js
+
+# copy LICENSE and manifest
+cp LICENSE tmp/release/
+cp manifest.json tmp/release/
+
+# zip it
+cd tmp/ # necessary to avoid zipping tmp/ in zipped directory structure
+zip -r release.zip release
