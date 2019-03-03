@@ -1,3 +1,9 @@
+## Unreleased
+
+#### Minor changes
+* update HTML fixtures
+* update dependencies
+
 ## v0.1.11 (2019-01-13)
 
 #### Minor changes
