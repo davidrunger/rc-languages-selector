@@ -13,7 +13,8 @@ Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |f| require f }
 
 Capybara.register_driver :poltergeist do |app|
   options = {
-    phantomjs_options: ['--load-images=no', '--disk-cache=yes']
+    js_errors: false,
+    phantomjs_options: ['--load-images=no', '--disk-cache=yes'],
   }
   Capybara::Poltergeist::Driver.new(app, options)
 end
